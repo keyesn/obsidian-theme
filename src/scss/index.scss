@@ -2,41 +2,41 @@
 // Main SCSS file that imports all partials
 
 // Import variables first (colors, fonts, etc)
-@import "./variables/variables";
+@import './variables/variables';
 
 // Import base styles (reset, typography)
-@import "./base/reset";
-@import "./base/typography";
+@import './base/reset';
+@import './base/typography';
 
 // Import layout components
-@import "./layout/sidebar";
+@import './layout/sidebar';
 
 // Import UI components
-@import "./components/buttons";
+@import './components/buttons';
 
 // Import plugin-specific styles
 // @import './plugins/...';
 
 // Any additional global styles can go here
 body {
-	font-smooth: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -font-smooth: auto;
 }
 
 // Dark mode transition
 body,
 body.theme-dark {
-	transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 // Focus styles for accessibility
 :focus {
-	outline: 2px solid var(--interactive-accent);
-	outline-offset: 2px;
+  outline: 2px solid var(--interactive-accent);
+  outline-offset: 2px;
 }
 
 // Remove focus outline for mouse users, keep for keyboard navigation
 :focus:not(:focus-visible) {
-	outline: none;
+  outline: none;
 }

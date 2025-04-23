@@ -1,127 +1,127 @@
 // Base colors - Light theme
 body {
-	// Background colors
-	--background-primary: #ffffff;
-	--background-secondary: #f5f6f8;
-	--background-tertiary: #eff0f3;
-	--background-modifier-hover: rgba(0, 0, 0, 0.05);
+  // Background colors
+  --background-primary: #fff;
+  --background-secondary: #f5f6f8;
+  --background-tertiary: #eff0f3;
+  --background-modifier-hover: rgb(0 0 0 / 5%);
 
-	// Text colors
-	--text-normal: #333333;
-	--text-muted: #666666;
-	--text-faint: #999999;
-	--text-accent: #1565c0;
-	--text-accent-hover: #0d47a1;
-	--text-strong: #000000;
-	--text-emphasis: #333333;
+  // Text colors
+  --text-normal: #333;
+  --text-muted: #666;
+  --text-faint: #999;
+  --text-accent: #1565c0;
+  --text-accent-hover: #0d47a1;
+  --text-strong: #000;
+  --text-emphasis: #333;
 
-	// UI element colors
-	--interactive-normal: #e0e0e0;
-	--interactive-hover: #c0c0c0;
-	--interactive-accent: #2196f3;
-	--interactive-accent-hover: #1976d2;
+  // UI element colors
+  --interactive-normal: #e0e0e0;
+  --interactive-hover: #c0c0c0;
+  --interactive-accent: #2196f3;
+  --interactive-accent-hover: #1976d2;
 
-	// Borders and dividers
-	--border-color: #e0e0e0;
-	--divider-color: #e0e0e0;
+  // Borders and dividers
+  --border-color: #e0e0e0;
+  --divider-color: #e0e0e0;
 
-	// Scrollbar
-	--scrollbar-bg: rgba(0, 0, 0, 0.05);
-	--scrollbar-thumb-bg: rgba(0, 0, 0, 0.1);
+  // Scrollbar
+  --scrollbar-bg: rgb(0 0 0 / 5%);
+  --scrollbar-thumb-bg: rgb(0 0 0 / 10%);
 
-	// Code colors
-	--code-background: #f5f5f5;
-	--code-normal: #24292e;
-	--pre-background: #f6f8fa;
-	--pre-code: #24292e;
+  // Code colors
+  --code-background: #f5f5f5;
+  --code-normal: #24292e;
+  --pre-background: #f6f8fa;
+  --pre-code: #24292e;
 
-	// Callouts & notice colors
-	--callout-info: #e3f2fd;
-	--callout-warning: #fff8e1;
-	--callout-error: #ffebee;
-	--callout-success: #e8f5e9;
+  // Callouts & notice colors
+  --callout-info: #e3f2fd;
+  --callout-warning: #fff8e1;
+  --callout-error: #ffebee;
+  --callout-success: #e8f5e9;
 
-	// Table colors
-	--table-border: #e0e0e0;
-	--table-header-background: #f5f5f5;
-	--table-row-even-background: #fafafa;
+  // Table colors
+  --table-border: #e0e0e0;
+  --table-header-background: #f5f5f5;
+  --table-row-even-background: #fafafa;
 
-	// Quote
-	--quote-border: #ddd;
+  // Quote
+  --quote-border: #ddd;
 
-	// Link colors
-	--link-color: #1565c0;
-	--link-color-hover: #0d47a1;
-	--link-unresolved-color: #9575cd;
+  // Link colors
+  --link-color: #1565c0;
+  --link-color-hover: #0d47a1;
+  --link-unresolved-color: #9575cd;
 
-	// Text selection
-	--text-selection: rgba(33, 150, 243, 0.2);
+  // Text selection
+  --text-selection: rgb(33 150 243 / 20%);
 
-	// Text highlight
-	--text-highlight-bg: #ffff00;
-	--text-highlight-fg: #000000;
+  // Text highlight
+  --text-highlight-bg: #ff0;
+  --text-highlight-fg: #000;
 }
 
 // Dark theme
 body.theme-dark {
-	// Background colors
-	--background-primary: #1e1e1e;
-	--background-secondary: #252526;
-	--background-tertiary: #2d2d30;
-	--background-modifier-hover: rgba(255, 255, 255, 0.1);
+  // Background colors
+  --background-primary: #1e1e1e;
+  --background-secondary: #252526;
+  --background-tertiary: #2d2d30;
+  --background-modifier-hover: rgb(255 255 255 / 10%);
 
-	// Text colors
-	--text-normal: #dcddde;
-	--text-muted: #a0a0a0;
-	--text-faint: #707070;
-	--text-accent: #64b5f6;
-	--text-accent-hover: #90caf9;
-	--text-strong: #ffffff;
-	--text-emphasis: #e0e0e0;
+  // Text colors
+  --text-normal: #dcddde;
+  --text-muted: #a0a0a0;
+  --text-faint: #707070;
+  --text-accent: #64b5f6;
+  --text-accent-hover: #90caf9;
+  --text-strong: #fff;
+  --text-emphasis: #e0e0e0;
 
-	// UI element colors
-	--interactive-normal: #3a3a3c;
-	--interactive-hover: #4a4a4c;
-	--interactive-accent: #2196f3;
-	--interactive-accent-hover: #42a5f5;
+  // UI element colors
+  --interactive-normal: #3a3a3c;
+  --interactive-hover: #4a4a4c;
+  --interactive-accent: #2196f3;
+  --interactive-accent-hover: #42a5f5;
 
-	// Borders and dividers
-	--border-color: #3a3a3c;
-	--divider-color: #3a3a3c;
+  // Borders and dividers
+  --border-color: #3a3a3c;
+  --divider-color: #3a3a3c;
 
-	// Scrollbar
-	--scrollbar-bg: rgba(255, 255, 255, 0.05);
-	--scrollbar-thumb-bg: rgba(255, 255, 255, 0.1);
+  // Scrollbar
+  --scrollbar-bg: rgb(255 255 255 / 5%);
+  --scrollbar-thumb-bg: rgb(255 255 255 / 10%);
 
-	// Code colors
-	--code-background: #2d2d2d;
-	--code-normal: #e0e0e0;
-	--pre-background: #282c34;
-	--pre-code: #abb2bf;
+  // Code colors
+  --code-background: #2d2d2d;
+  --code-normal: #e0e0e0;
+  --pre-background: #282c34;
+  --pre-code: #abb2bf;
 
-	// Callouts & notice colors
-	--callout-info: #1a3b5c;
-	--callout-warning: #4d3800;
-	--callout-error: #4c1f1a;
-	--callout-success: #133929;
+  // Callouts & notice colors
+  --callout-info: #1a3b5c;
+  --callout-warning: #4d3800;
+  --callout-error: #4c1f1a;
+  --callout-success: #133929;
 
-	// Table colors
-	--table-border: #3a3a3c;
-	--table-header-background: #252526;
-	--table-row-even-background: #2d2d30;
+  // Table colors
+  --table-border: #3a3a3c;
+  --table-header-background: #252526;
+  --table-row-even-background: #2d2d30;
 
-	// Quote
-	--quote-border: #4a4a4c;
+  // Quote
+  --quote-border: #4a4a4c;
 
-	// Link colors
-	--link-color: #64b5f6;
-	--link-color-hover: #90caf9;
-	--link-unresolved-color: #b39ddb;
+  // Link colors
+  --link-color: #64b5f6;
+  --link-color-hover: #90caf9;
+  --link-unresolved-color: #b39ddb;
 
-	// Text selection
-	--text-selection: rgba(33, 150, 243, 0.3);
+  // Text selection
+  --text-selection: rgb(33 150 243 / 30%);
 
-	// Text highlight
-	--text-highlight-bg: #695e04;
-	--text-highlight-fg: #ffffff;
+  // Text highlight
+  --text-highlight-bg: #695e04;
+  --text-highlight-fg: #fff;
 }

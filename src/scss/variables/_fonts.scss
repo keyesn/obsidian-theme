@@ -2,66 +2,67 @@
 // Font variables and typography settings
 
 :root {
-	// Font families
-	--font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	--font-text: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	--font-monospace: "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
-		Courier, monospace;
+  // Font families
+  --font-ui:
+    -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen-sans, ubuntu, cantarell,
+    'Helvetica Neue', sans-serif;
+  --font-text:
+    -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen-sans, ubuntu, cantarell,
+    'Helvetica Neue', sans-serif;
+  --font-monospace: 'SFMono-Regular', consolas, 'Liberation Mono', menlo, courier, monospace;
 
-	// Font weights
-	--font-normal: 400;
-	--font-medium: 500;
-	--font-semibold: 600;
-	--font-bold: 700;
+  // Font weights
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
 
-	// Font sizes
-	--font-size-xs: 0.75rem; // 12px
-	--font-size-sm: 0.875rem; // 14px
-	--font-size-base: 1rem; // 16px
-	--font-size-md: 1.125rem; // 18px
-	--font-size-lg: 1.25rem; // 20px
-	--font-size-xl: 1.5rem; // 24px
-	--font-size-2xl: 1.75rem; // 28px
-	--font-size-3xl: 2rem; // 32px
+  // Font sizes
+  --font-size-xs: 0.75rem; // 12px
+  --font-size-sm: 0.875rem; // 14px
+  --font-size-base: 1rem; // 16px
+  --font-size-md: 1.125rem; // 18px
+  --font-size-lg: 1.25rem; // 20px
+  --font-size-xl: 1.5rem; // 24px
+  --font-size-2xl: 1.75rem; // 28px
+  --font-size-3xl: 2rem; // 32px
 
-	// Heading sizes
-	--h1-size: var(--font-size-3xl);
-	--h2-size: var(--font-size-2xl);
-	--h3-size: var(--font-size-xl);
-	--h4-size: var(--font-size-lg);
-	--h5-size: var(--font-size-md);
-	--h6-size: var(--font-size-base);
+  // Heading sizes
+  --h1-size: var(--font-size-3xl);
+  --h2-size: var(--font-size-2xl);
+  --h3-size: var(--font-size-xl);
+  --h4-size: var(--font-size-lg);
+  --h5-size: var(--font-size-md);
+  --h6-size: var(--font-size-base);
 
-	// Code size
-	--code-size: var(--font-size-sm);
+  // Code size
+  --code-size: var(--font-size-sm);
 }
 
 // Font settings for editor
 .markdown-source-view {
-	font-family: var(--font-text);
-	font-size: var(--font-size-base);
-	line-height: var(--line-height);
+  font-family: var(--font-text);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
 }
 
 // Font settings for preview
 .markdown-preview-view {
-	font-family: var(--font-text);
-	font-size: var(--font-size-base);
-	line-height: var(--line-height);
+  font-family: var(--font-text);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
 }
 
 // UI font settings
 .app-container {
-	font-family: var(--font-ui);
-	font-size: var(--font-size-sm);
+  font-family: var(--font-ui);
+  font-size: var(--font-size-sm);
 }
 
 // Monospace (for code blocks, inline code, etc.)
 code,
 pre,
 .cm-inline-code {
-	font-family: var(--font-monospace);
-	font-size: var(--code-size);
+  font-family: var(--font-monospace);
+  font-size: var(--code-size);
 }
