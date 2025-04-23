@@ -13,3 +13,13 @@ Catalog the development process of creating a custom theme for Obsidian.
 ```bash
 git clone https://github.com/obsidianmd/obsidian-sample-theme.git "Sample Theme"
 ```
+
+## Resources
+
+Commonly used resources for creating the custom theme.
+
+- [Obsidian Build a Theme Documentation](https://docs.obsidian.md/Themes/App+themes/Build+a+theme)
+
+Themes used for reference:
+
+- [Primary](https://github.com/primary-theme/obsidian/tree/main)
