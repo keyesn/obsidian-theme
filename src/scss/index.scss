@@ -1,0 +1,67 @@
+/* ---------------------------------------------------------------------------
+
+Nathan's Obsidian Theme
+
+---------------------------------------------------------------------------- */
+
+:root {
+	--input-focus-border-color: Highlight;
+	--input-focus-outline: 1px solid Canvas;
+	--input-unfocused-border-color: transparent;
+	--input-disabled-border-color: transparent;
+	--input-hover-border-color: black;
+	/* Default Input Variables for Root */
+}
+
+body {
+	--radius-s: 0px;
+	--radius-m: 0px;
+	--radius-l: 0px;
+	--input-radius: 0px;
+	--tab-radius-active: 0px;
+	--checkbox-radius: 0px;
+	--toggle-radius: 0px;
+	--toggle-thumb-radius: 0px;
+	--slider-thumb-radius: 0px;
+
+	--background-primary: #2a2a2a; /* Dark background */
+	--text-normal: #cccccc; /* Light text */
+	--interactive-accent: #4a90e2; /* A blue accent color */
+}
+
+.workspace-tab-header.is-active::before,
+.workspace-tab-header.is-active::after {
+	display: none;
+}
+
+svg * {
+	stroke-linecap: square;
+	stroke-linejoin: miter;
+	rx: 0;
+	ry: 0;
+}
+
+.menu {
+	padding: var(--size-2-1);
+}
+
+.menu-item {
+	padding: var(--size-4-1) var(--size-4-2);
+}
+
+.menu-separator {
+	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+}
+
+h1,
+.cm-header-1 {
+	color: var(--interactive-accent);
+	border-bottom: 1px solid var(--text-faint);
+	padding-bottom: 5px;
+}
+
+h2,
+.cm-header-2 {
+	color: var(--text-normal);
+	font-weight: bold;
+}

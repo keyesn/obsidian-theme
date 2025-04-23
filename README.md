@@ -11,6 +11,56 @@ One of the VSCode extensions is screwing with this and I can't stand the warning
 
 ---
 
+## Usage Instructions
+
+### Workflow for Auto Updates
+
+1. **Start the Watcher**:
+
+  ```bash
+  npx grunt
+  ```
+
+> [!note]
+> Starts the default task that watches for changes.
+
+### Debugging Tips
+
+- If changes aren't appearing, check your `.env` file path.
+- Directly examin `theme.css` in your project root to confirm changes are processed.
+- If something breaks, check the unminified CSS at `src/css/main.css` for debugging.
+
+---
+
+## Project Structure
+
+```plaintext
+src/
+├── css/                  # CSS files
+│   ├── main.css          # Main CSS file (unminified)
+│   └── theme.css         # Minified CSS file (for Obsidian)
+├── scss/                 # Sass files
+│   ├── _variables.scss   # Sass variables
+│   ├── _mixins.scss      # Sass mixins
+│   ├── _base.scss        # Base styles
+│   ├── _components.scss  # Component styles
+
+```
+
+### SCSS Folder (`src/scss/`)
+
+- Contains source files you edit.
+- The main `index.scss` imports other SCSS partials.
+
+### CSS Folder (`src/css/`)
+
+- Serves as an output and storage location
+- Contains CSS files that aren't compiled from SCSS:
+  - `style-settings.css` : Contains Theme settings plugin configurations.
+  - Font files in `fonts/` folder - Custom font definitions
+
+---
+
 ## Setup Guide
 
 ### Prerequisites
@@ -38,6 +88,9 @@ Create `.env` file in project root:
 ```env
 OBSIDIAN_VAULT_PATH="/path/to/your/vault/.obsidian/themes"
 ```
+
+> [!note]
+> Path should be relative to your home directory (which is added automatically by the Gruntfile).
 
 ---
 
