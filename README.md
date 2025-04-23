@@ -36,15 +36,23 @@ One of the VSCode extensions is screwing with this and I can't stand the warning
 
 ```plaintext
 src/
-├── css/                  # CSS files
-│   ├── main.css          # Main CSS file (unminified)
-│   └── theme.css         # Minified CSS file (for Obsidian)
-├── scss/                 # Sass files
-│   ├── _variables.scss   # Sass variables
-│   ├── _mixins.scss      # Sass mixins
-│   ├── _base.scss        # Base styles
-│   ├── _components.scss  # Component styles
-
+├── css/
+│   ├── main.css                  # Unminified - Generated
+│   └── main.min.css              # Minified - Generated
+└── scss/
+    ├── base/                     # Basic HTML element styling, resets
+    │   ├── _reset.scss
+    │   └── _typography.scss
+    ├── components/               # Specific UI parts: buttons, menus, callouts, etc.
+    │   └── _buttons.scss
+    ├── layout/                   # Layout-related: header, footer, sidebar, etc.
+    │   └── _sidebar.scss
+    ├── plugins/                  # Plugin-specific
+    ├── variables/                # Colors, fonts, layout variables
+    │   ├── _variables.scss
+    │   ├── _colors.scss
+    │   └── _fonts.scss
+    └── index.scss
 ```
 
 ### SCSS Folder (`src/scss/`)
@@ -196,6 +204,19 @@ grunt build
 ---
 
 ## Future Plans
+
+- CSS Architecture from Claude output:
+
+```plaintext
+scss/
+├── settings/      # Variables, config
+├── tools/         # Mixins, functions
+├── generic/       # Reset, normalize
+├── elements/      # HTML elements
+├── components/    # UI components
+├── utilities/     # Helper classes
+└── main.scss      # Import file
+```
 
 - Explore migration to Gulp for build tasks instead of Grunt.
   - Another task runner that uses streams (in-memory file processing) for faster builds.
