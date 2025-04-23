@@ -43,6 +43,15 @@ OBSIDIAN_VAULT_PATH="/path/to/your/vault/.obsidian/themes"
 
 ## Development Workflow
 
+### High-Level Steps
+
+1. Sass files are compiled to CSS using the `grunt-contrib-sass` plugin.
+2. CSS files might be concatenated into one file using `grunt-concat-css`.
+3. The resulting CSS is minified with `grunt-contrib-cssmin` for production.
+4. Files are copied to their final destinations with `grunt-contrib-copy`.
+5. During development, the `grunt-contrib-watch` plugin monitors file changes and triggers rebuilds.
+6. Environment variables are managed through `dotenv` and `grunt-env`.
+
 ### Grunt Automation Tasks
 
 ```bash
@@ -108,6 +117,28 @@ grunt build
 
 - [Primary Theme](https://github.com/primary-theme/obsidian)
 - [Minimal Theme](https://github.com/kepano/obsidian-minimal)
+
+---
+
+## Review
+
+### Grunt Alternatives
+
+- **Gulp**: A streaming build system that uses code over configuration.
+  - More control and flexibility, but requires more setup.
+  - Uses streams for faster builds (in-memory file processing).
+- **Webpack**: A module bundler that can handle complex build processes.
+  - More complex and powerful, but overkill for simple tasks.
+  - Can be used for both development and production builds.
+- **Rollup**: A module bundler for JavaScript libraries.
+  - Focuses on ES modules and tree-shaking for smaller bundles.
+  - More suited for library development than theming.
+- **Vite**: A modern build tool that uses native ES modules.
+  - Fast development server and optimized builds.
+  - Great for modern JavaScript projects, but may require more setup for CSS.
+- **esbuild**: A fast JavaScript bundler and minifier.
+  - Focuses on speed and simplicity.
+  - Can be used for CSS, but primarily designed for JavaScript.
 
 ---
 
