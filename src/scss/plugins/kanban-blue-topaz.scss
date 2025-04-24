@@ -1,0 +1,2849 @@
+/* ================================================================================== */
+/* ----------------------------------- Variables ------------------------------------ */
+/* ================================================================================== */
+/* TBD */
+/*
+--theme-color-translucent-015
+
+*/
+
+.theme-dark {
+  /* --------- Colors --------- */
+  --kanban-color-1: #ff0000;
+  --kanban-color-2: #30e4e441;
+  --kanban-color-3: #1cb54f44;
+  --kanban-color-4: #97b82b49;
+  --kanban-color-5: #bb722d41;
+  --kanban-color-6: #d12e2e42;
+  --kanban-color-7: #8f36cb3f;
+
+  /* --------- Primary Colors --------- */
+  --primary-kanban-color-1: hsla(212, 100%, 42%, 0.322);
+  --primary-kanban-color-2: hsla(180, 77%, 54%, 0.255);
+  --primary-kanban-color-3: hsla(140, 73%, 41%, 0.267);
+  --primary-kanban-color-4: hsla(74, 62%, 45%, 0.286);
+  --primary-kanban-color-5: hsla(29, 61%, 45%, 0.255);
+  --primary-kanban-color-6: hsla(0, 64%, 50%, 0.259);
+  --primary-kanban-color-7: hsla(276, 59%, 50%, 0.247);
+
+  /*pseudo-kanban*/
+  --p-kanban-bg-color: #6c6c6c42;
+  --p-kanban-border-color: transparent;
+  --p-kanban-card-color-1: #0000003f;
+  --p-kanban-card-color-2: #41414136;
+  --p-kanban-color-6: #f3424252;
+  --p-kanban-color-5: #eb973752;
+  --p-kanban-color-4: #d2dd3852;
+  --p-kanban-color-3: #38ce2a52;
+  --p-kanban-color-2: #2ec4c452;
+  --p-kanban-color-1: #3496e652;
+  --p-kanban-color-8: #b962ff52;
+  --p-kanban-color-7: #e45bdd52;
+  --p-kanban-color-simple: #8e8e8e41;
+  --p-kanban-color-shadow: #0000004d;
+
+  --interactive-accent-rgb: 45, 130, 204;
+  --interactive-accent-hsl: 208, 63.9%, 48.8%;
+  --interactive-accent-hover: var(--color-accent-2);
+
+  --theme-color-translucent-015: hsla(var(--interactive-accent-hsl), 0.15);
+}
+
+.theme-light {
+  /* --------- Primary Colors --------- */
+
+  /* --------- Colors --------- */
+  /*pseudo-kanban*/
+  --p-kanban-bg-color: #d3d3d32d;
+  --p-kanban-border-color: #a0a0a060;
+  --p-kanban-card-color-1: #ffffff80;
+  --p-kanban-card-color-2: #ffffff;
+  --p-kanban-color-6: #f18e8e65;
+  --p-kanban-color-5: #eeb36f65;
+  --p-kanban-color-4: #d1d77f65;
+  --p-kanban-color-3: #8ce38465;
+  --p-kanban-color-2: #7cdddd65;
+  --p-kanban-color-1: #52aaf365;
+  --p-kanban-color-8: #ba8be165;
+  --p-kanban-color-7: #e677e065;
+  --p-kanban-color-simple: #cdcdcd2c;
+  --p-kanban-color-shadow: #cfcfcf4d;
+
+  --interactive-accent-rgb: 70, 142, 235;
+  --interactive-accent-hsl: 214, 80.5%, 59.8%;
+  --interactive-accent-hover: var(--color-accent-2);
+
+  --theme-color-translucent-015: hsla(var(--interactive-accent-hsl), 0.15);
+}
+
+/* ================================================================================== */
+/* ----------------------------------- MISC Stuff ----------------------------------- */
+/* ================================================================================== */
+/* --------- CSS Classes --------- */
+.kanban ul {
+  display: flex;
+  flex-direction: row;
+  border: 0px solid var(--p-kanban-border-color);
+  padding: 0rem;
+  border-radius: var(--radius-m);
+  flex-wrap: wrap;
+}
+.kanban ul > li .list-bullet:after {
+  display: none;
+}
+
+.kanban ul > li {
+  flex: 1 1 20%;
+  padding: 0.1em 1em 0.1em 0.8em;
+  margin: 0 0.3em 0.3em 0 !important;
+  list-style: none;
+  border: 1px solid var(--p-kanban-border-color);
+  border-left: 1px solid var(--p-kanban-border-color) !important;
+  border-radius: var(--radius-s);
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.kanban ul li.task-list-item .task-list-item-checkbox {
+  margin-left: auto;
+}
+
+.kanban ul .list-collapse-indicator.collapse-indicator.collapse-icon::before {
+  color: var(--text-accent);
+  transition: transform 10ms linear 0s;
+}
+
+body.colorful-p-kanban .kanban ul > li:nth-of-type(8n + 1) {
+  background-color: var(--p-kanban-color-1);
+}
+body.colorful-p-kanban .kanban ul > li:nth-of-type(8n + 2) {
+  background-color: var(--p-kanban-color-2);
+}
+body.colorful-p-kanban .kanban ul > li:nth-of-type(8n + 3) {
+  background-color: var(--p-kanban-color-3);
+}
+body.colorful-p-kanban .kanban ul > li:nth-of-type(8n + 4) {
+  background-color: var(--p-kanban-color-4);
+}
+body.colorful-p-kanban .kanban ul > li:nth-of-type(8n + 5) {
+  background-color: var(--p-kanban-color-5);
+}
+body.colorful-p-kanban .kanban ul > li:nth-of-type(8n + 6) {
+  background-color: var(--p-kanban-color-6);
+}
+body.colorful-p-kanban .kanban ul > li:nth-of-type(8n + 7) {
+  background-color: var(--p-kanban-color-7);
+}
+body.colorful-p-kanban .kanban ul > li:nth-of-type(8n) {
+  background-color: var(--p-kanban-color-8);
+}
+.canvas-node-container .kanban ul > li:nth-of-type(n) {
+  backdrop-filter: none;
+}
+.kanban ul > li:nth-of-type(n) {
+  background-color: var(--p-kanban-color-simple);
+  padding-left: 1em;
+  backdrop-filter: blur(calc(var(--blur-p-kanban-frosted-glass) * 2px));
+}
+.kanban ul:first-child > li:nth-of-type(8n + 1) {
+  border-top: 6px solid var(--p-kanban-color-1) !important;
+}
+.kanban ul:first-child > li:nth-of-type(8n + 2) {
+  border-top: 6px solid var(--p-kanban-color-2) !important;
+}
+.kanban ul:first-child > li:nth-of-type(8n + 3) {
+  border-top: 6px solid var(--p-kanban-color-3) !important;
+}
+.kanban ul:first-child > li:nth-of-type(8n + 4) {
+  border-top: 6px solid var(--p-kanban-color-4) !important;
+}
+.kanban ul:first-child > li:nth-of-type(8n + 5) {
+  border-top: 6px solid var(--p-kanban-color-5) !important;
+}
+.kanban ul:first-child > li:nth-of-type(8n + 6) {
+  border-top: 6px solid var(--p-kanban-color-6) !important;
+}
+.kanban ul:first-child > li:nth-of-type(8n + 7) {
+  border-top: 6px solid var(--p-kanban-color-7) !important;
+}
+.kanban ul:first-child > li:nth-of-type(8n) {
+  border-top: 6px solid var(--p-kanban-color-8) !important;
+}
+body.simple-p-kanban .kanban ul:first-child > li:nth-of-type(n) {
+  border-top: none !important;
+}
+
+body:not(.remove-shadow-p-kanban) .kanban ul > li:hover {
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+  box-shadow: 0 3px 5px 0 var(--p-kanban-color-shadow),
+    0 3px 1px -3px var(--p-kanban-color-shadow),
+    2px 3px 3px 0 var(--p-kanban-color-shadow);
+}
+
+.kanban ul ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0rem;
+  margin-top: 0.5rem;
+  border-radius: 0;
+  border: 0;
+  background: none;
+}
+
+.kanban ul ul li:not(.task-list-item) {
+  width: 100%;
+  display: block;
+  background-color: var(--p-kanban-card-color-1) !important;
+}
+
+body.remove-shadow-p-kanban .kanban ul ul li:hover {
+  background: var(--p-kanban-card-color-2) !important;
+  border-color: var(--p-kanban-border-color) !important;
+  border-left: 1px solid var(--p-kanban-border-color) !important;
+}
+
+body.remove-shadow-p-kanban.theme-dark .kanban ul ul li:hover {
+  border-color: #696969e1 !important;
+  border-left: 1px solid #696969e1 !important;
+}
+
+.kanban ul ul li .task-list-item-checkbox {
+  margin-left: 1.5rem !important;
+}
+
+.kanban ul ul ul {
+  margin-right: 0;
+}
+
+.kanban ul ul::before {
+  border-left: 0;
+}
+
+:is(.markdown-preview-view, .markdown-rendered).is-readable-line-width.kanban
+  .markdown-preview-sizer
+  > div
+  > ul {
+  max-width: 100%;
+}
+
+.kanban :is(ol, ul).contains-task-list :is(ol, ul) {
+  position: initial;
+}
+
+.kanban :is(ol, ul).contains-task-list :is(ol, ul)::before {
+  all: initial;
+}
+
+.kanban ul > li.task-list-item {
+  flex: 1 1 20%;
+  padding: 0.1em 1em;
+  list-style: none;
+  border: 1px solid var(--p-kanban-border-color);
+  border-left: 1px solid var(--p-kanban-border-color) !important;
+  border-radius: var(--radius-s);
+  word-wrap: break-word;
+  word-break: break-word;
+  text-indent: 0.01em;
+}
+
+.kanban ul ul li.task-list-item {
+  width: 100%;
+  display: block;
+  padding-left: 2em;
+  text-indent: -3em;
+  background-color: var(--p-kanban-card-color-1) !important;
+}
+
+.kanban
+  ul
+  ul
+  li.task-list-item
+  .list-collapse-indicator.collapse-indicator.collapse-icon {
+  text-indent: -1em;
+}
+
+body:not(.default-icons)
+  .kanban
+  li.task-list-item
+  .list-collapse-indicator.collapse-indicator.collapse-icon::before {
+  margin-left: -0.2em;
+}
+
+body:not(.default-icons)
+  .kanban
+  li.task-list-item
+  .task-list-item.is-collapsed
+  .list-collapse-indicator.collapse-indicator.collapse-icon::before {
+  transform: translateX(-0.9em) translateY(-1em) rotate(-90deg);
+}
+
+body.colorful-p-kanban .kanban .task-list-item-checkbox {
+  border-color: var(--text-normal) !important;
+}
+
+/* --------- Selection Highlight --------- */
+.suggestion-item.is-selected {
+  background-color: var(--theme-color-translucent-015);
+}
+
+:is(.markdown-preview-view, .markdown-rendered):not([class*="kanban-plugin"]) {
+  position: relative;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+  color: var(--text-normal);
+  user-select: text;
+}
+
+/* --------- Highlight Active Line for Lists --------- */
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-1:not(
+    :has(~ .HyperMD-list-line-1 ~ .HyperMD-list-line:hover)
+  ):has(
+    ~ :is(
+        .HyperMD-list-line-7,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-5,
+        .HyperMD-list-line-4,
+        .HyperMD-list-line-3,
+        .HyperMD-list-line-2
+      ):hover
+  )::after,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-1:not(
+    :has(~ .HyperMD-list-line-1 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-2:hover,
+    ~ .HyperMD-list-line-2
+      ~ :is(
+        .HyperMD-list-line-3,
+        .HyperMD-list-line-4,
+        .HyperMD-list-line-5,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-7
+      ):hover
+  )::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-2:not(
+    :has(~ .HyperMD-list-line-2 ~ .HyperMD-list-line:hover)
+  ):is(
+    :hover,
+    :has(
+        ~ :is(
+            .HyperMD-list-line-3,
+            .HyperMD-list-line-4,
+            .HyperMD-list-line-5,
+            .HyperMD-list-line-6,
+            .HyperMD-list-line-7
+          ):hover
+      )
+  )::before {
+  --list-threading-offset: 1em;
+}
+
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-2:not(
+    :has(~ .HyperMD-list-line-2 ~ .HyperMD-list-line:hover)
+  ):has(
+    ~ :is(
+        .HyperMD-list-line-7,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-5,
+        .HyperMD-list-line-4,
+        .HyperMD-list-line-3
+      ):hover
+  )::after,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-2:not(
+    :has(~ .HyperMD-list-line-2 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-3:hover,
+    ~ .HyperMD-list-line-3
+      ~ :is(
+        .HyperMD-list-line-4,
+        .HyperMD-list-line-5,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-7
+      ):hover
+  )::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-3:not(
+    :has(~ .HyperMD-list-line-3 ~ .HyperMD-list-line:hover)
+  ):is(
+    :hover,
+    :has(
+        ~ :is(
+            .HyperMD-list-line-4,
+            .HyperMD-list-line-5,
+            .HyperMD-list-line-6,
+            .HyperMD-list-line-7
+          ):hover
+      )
+  )::before {
+  --list-threading-offset: calc(1em + var(--list-indent));
+}
+
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-3:not(
+    :has(~ .HyperMD-list-line-3 ~ .HyperMD-list-line:hover)
+  ):has(
+    ~ :is(
+        .HyperMD-list-line-7,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-5,
+        .HyperMD-list-line-4
+      ):hover
+  )::after,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-3:not(
+    :has(~ .HyperMD-list-line-3 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-4:hover,
+    ~ .HyperMD-list-line-4
+      ~ :is(
+        .HyperMD-list-line-5,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-7
+      ):hover
+  )::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-4:not(
+    :has(~ .HyperMD-list-line-4 ~ .HyperMD-list-line:hover)
+  ):is(
+    :hover,
+    :has(
+        ~ :is(
+            .HyperMD-list-line-5,
+            .HyperMD-list-line-6,
+            .HyperMD-list-line-7
+          ):hover
+      )
+  )::before {
+  --list-threading-offset: calc(1em + 2 * var(--list-indent));
+}
+
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-4:not(
+    :has(~ .HyperMD-list-line-4 ~ .HyperMD-list-line:hover)
+  ):has(
+    ~ :is(
+        .HyperMD-list-line-7,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-5
+      ):hover
+  )::after,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-4:not(
+    :has(~ .HyperMD-list-line-4 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-5:hover,
+    ~ .HyperMD-list-line-5
+      ~ :is(.HyperMD-list-line-6, .HyperMD-list-line-7):hover
+  )::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-5:not(
+    :has(~ .HyperMD-list-line-5 ~ .HyperMD-list-line:hover)
+  ):is(
+    :hover,
+    :has(~ :is(.HyperMD-list-line-6, .HyperMD-list-line-7):hover)
+  )::before {
+  --list-threading-offset: calc(1em + 3 * var(--list-indent));
+}
+
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-5:not(
+    :has(~ .HyperMD-list-line-5 ~ .HyperMD-list-line:hover)
+  ):has(~ :is(.HyperMD-list-line-7, .HyperMD-list-line-6):hover)::after,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-5:not(
+    :has(~ .HyperMD-list-line-5 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-6:hover,
+    ~ .HyperMD-list-line-6 ~ :is(.HyperMD-list-line-7):hover
+  )::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-6:not(
+    :has(~ .HyperMD-list-line-6 ~ .HyperMD-list-line:hover)
+  ):is(:hover, :has(~ :is(.HyperMD-list-line-7):hover))::before {
+  --list-threading-offset: calc(1em + 4 * var(--list-indent));
+}
+
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-6:not(
+    :has(~ .HyperMD-list-line-6 ~ .HyperMD-list-line:hover)
+  ):has(~ :is(.HyperMD-list-line-7):hover)::after,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-6:not(
+    :has(~ .HyperMD-list-line-6 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-7:hover,
+    ~ .HyperMD-list-line-7 ~ :is(.HyperMD-list-line-8):hover
+  )::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-7:not(
+    :has(~ .HyperMD-list-line-7 ~ .HyperMD-list-line:hover)
+  ):hover::before {
+  --list-threading-offset: calc(1em + 5 * var(--list-indent));
+}
+
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-2:not(
+    :has(~ .HyperMD-list-line-2 ~ .HyperMD-list-line:hover)
+  ):has(
+    ~ :is(
+        .HyperMD-list-line-7,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-5,
+        .HyperMD-list-line-4,
+        .HyperMD-list-line-3
+      ):hover
+  )::after,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-2:not(
+    :has(~ .HyperMD-list-line-2 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-3:hover,
+    ~ .HyperMD-list-line-3
+      ~ :is(
+        .HyperMD-list-line-4,
+        .HyperMD-list-line-5,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-7
+      ):hover
+  )::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-3:not(
+    :has(~ .HyperMD-list-line-3 ~ .HyperMD-list-line:hover)
+  ):is(
+    :hover,
+    :has(
+        ~ :is(
+            .HyperMD-list-line-4,
+            .HyperMD-list-line-5,
+            .HyperMD-list-line-6,
+            .HyperMD-list-line-7
+          ):hover
+      )
+  )::before {
+  filter: hue-rotate(60deg);
+}
+
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-3:not(
+    :has(~ .HyperMD-list-line-3 ~ .HyperMD-list-line:hover)
+  ):has(
+    ~ :is(
+        .HyperMD-list-line-7,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-5,
+        .HyperMD-list-line-4
+      ):hover
+  )::after,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-3:not(
+    :has(~ .HyperMD-list-line-3 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-4:hover,
+    ~ .HyperMD-list-line-4
+      ~ :is(
+        .HyperMD-list-line-5,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-7
+      ):hover
+  )::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-4:not(
+    :has(~ .HyperMD-list-line-4 ~ .HyperMD-list-line:hover)
+  ):is(
+    :hover,
+    :has(
+        ~ :is(
+            .HyperMD-list-line-5,
+            .HyperMD-list-line-6,
+            .HyperMD-list-line-7
+          ):hover
+      )
+  )::before {
+  filter: hue-rotate(120deg);
+}
+
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-4:not(
+    :has(~ .HyperMD-list-line-4 ~ .HyperMD-list-line:hover)
+  ):has(
+    ~ :is(
+        .HyperMD-list-line-7,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-5
+      ):hover
+  )::after,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-4:not(
+    :has(~ .HyperMD-list-line-4 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-5:hover,
+    ~ .HyperMD-list-line-5
+      ~ :is(.HyperMD-list-line-6, .HyperMD-list-line-7):hover
+  )::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-5:not(
+    :has(~ .HyperMD-list-line-5 ~ .HyperMD-list-line:hover)
+  ):is(
+    :hover,
+    :has(~ :is(.HyperMD-list-line-6, .HyperMD-list-line-7):hover)
+  )::before {
+  filter: hue-rotate(180deg);
+}
+
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-5:not(
+    :has(~ .HyperMD-list-line-5 ~ .HyperMD-list-line:hover)
+  ):has(~ :is(.HyperMD-list-line-7, .HyperMD-list-line-6):hover)::after,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-5:not(
+    :has(~ .HyperMD-list-line-5 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-6:hover,
+    ~ .HyperMD-list-line-6 ~ :is(.HyperMD-list-line-7):hover
+  )::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-6:not(
+    :has(~ .HyperMD-list-line-6 ~ .HyperMD-list-line:hover)
+  ):is(:hover, :has(~ :is(.HyperMD-list-line-7):hover))::before {
+  filter: hue-rotate(240deg);
+}
+
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-6:not(
+    :has(~ .HyperMD-list-line-6 ~ .HyperMD-list-line:hover)
+  ):has(~ :is(.HyperMD-list-line-7):hover)::after,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-6:not(
+    :has(~ .HyperMD-list-line-6 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-7:hover,
+    ~ .HyperMD-list-line-7 ~ :is(.HyperMD-list-line-8):hover
+  )::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-7:not(
+    :has(~ .HyperMD-list-line-7 ~ .HyperMD-list-line:hover)
+  ):hover::before {
+  filter: hue-rotate(300deg);
+}
+
+/* tails */
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-1:not(
+    :has(~ .HyperMD-list-line-1 ~ .HyperMD-list-line:hover)
+  ):has(
+    ~ :is(
+        .HyperMD-list-line-7,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-5,
+        .HyperMD-list-line-4,
+        .HyperMD-list-line-3,
+        .HyperMD-list-line-2
+      ):hover
+  )::after,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-2:not(
+    :has(~ .HyperMD-list-line-2 ~ .HyperMD-list-line:hover)
+  ):has(
+    ~ :is(
+        .HyperMD-list-line-7,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-5,
+        .HyperMD-list-line-4,
+        .HyperMD-list-line-3
+      ):hover
+  )::after,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-3:not(
+    :has(~ .HyperMD-list-line-3 ~ .HyperMD-list-line:hover)
+  ):has(
+    ~ :is(
+        .HyperMD-list-line-7,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-5,
+        .HyperMD-list-line-4
+      ):hover
+  )::after,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-4:not(
+    :has(~ .HyperMD-list-line-4 ~ .HyperMD-list-line:hover)
+  ):has(
+    ~ :is(
+        .HyperMD-list-line-7,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-5
+      ):hover
+  )::after,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-5:not(
+    :has(~ .HyperMD-list-line-5 ~ .HyperMD-list-line:hover)
+  ):has(~ :is(.HyperMD-list-line-7, .HyperMD-list-line-6):hover)::after,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-6:not(
+    :has(~ .HyperMD-list-line-6 ~ .HyperMD-list-line:hover)
+  ):has(~ :is(.HyperMD-list-line-7):hover)::after {
+  content: "";
+  position: absolute;
+  left: var(--list-threading-offset);
+  bottom: 0;
+  height: calc(100% - 1em);
+  width: var(--bt-indentation-width-hover);
+  background-color: var(--bt-connected-indent-line-color);
+}
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line.HyperMD-task-line::after {
+  max-height: calc(100% - 1.2em);
+}
+
+/* in-between lines */
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-1:not(
+    :has(~ .HyperMD-list-line-1 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-2:hover,
+    ~ .HyperMD-list-line-2
+      ~ :is(
+        .HyperMD-list-line-7,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-5,
+        .HyperMD-list-line-4,
+        .HyperMD-list-line-3
+      ):hover
+  )::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-2:not(
+    :has(~ .HyperMD-list-line-2 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-3:hover,
+    ~ .HyperMD-list-line-3
+      ~ :is(
+        .HyperMD-list-line-7,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-5,
+        .HyperMD-list-line-4
+      ):hover
+  )::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-3:not(
+    :has(~ .HyperMD-list-line-3 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-4:hover,
+    ~ .HyperMD-list-line-4
+      ~ :is(
+        .HyperMD-list-line-7,
+        .HyperMD-list-line-6,
+        .HyperMD-list-line-5
+      ):hover
+  )::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-4:not(
+    :has(~ .HyperMD-list-line-4 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-5:hover,
+    ~ .HyperMD-list-line-5
+      ~ :is(.HyperMD-list-line-7, .HyperMD-list-line-6):hover
+  )::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-5:not(
+    :has(~ .HyperMD-list-line-5 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(
+    ~ .HyperMD-list-line-6:hover,
+    ~ .HyperMD-list-line-6
+      ~ :is(.HyperMD-list-line-7, .HyperMD-list-line-6):hover
+  )::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-6:not(
+    :has(~ .HyperMD-list-line-6 ~ .HyperMD-list-line:hover)
+  )
+  ~ .HyperMD-list-line:has(~ .HyperMD-list-line-7:hover)::before {
+  content: "";
+  position: absolute;
+  left: var(--list-threading-offset);
+  top: 0;
+  height: 100%;
+  width: var(--bt-indentation-width-hover);
+  background-color: var(--bt-connected-indent-line-color);
+}
+
+/* elbows */
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-2:not(
+    :has(~ .HyperMD-list-line-2 ~ .HyperMD-list-line:hover)
+  ):is(
+    :hover,
+    :has(
+        ~ :is(
+            .HyperMD-list-line-7,
+            .HyperMD-list-line-6,
+            .HyperMD-list-line-5,
+            .HyperMD-list-line-4,
+            .HyperMD-list-line-3
+          ):hover
+      )
+  )::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-3:not(
+    :has(~ .HyperMD-list-line-3 ~ .HyperMD-list-line:hover)
+  ):is(
+    :hover,
+    :has(
+        ~ :is(
+            .HyperMD-list-line-7,
+            .HyperMD-list-line-6,
+            .HyperMD-list-line-5,
+            .HyperMD-list-line-4
+          ):hover
+      )
+  )::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-4:not(
+    :has(~ .HyperMD-list-line-4 ~ .HyperMD-list-line:hover)
+  ):is(
+    :hover,
+    :has(
+        ~ :is(
+            .HyperMD-list-line-7,
+            .HyperMD-list-line-6,
+            .HyperMD-list-line-5
+          ):hover
+      )
+  )::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-5:not(
+    :has(~ .HyperMD-list-line-5 ~ .HyperMD-list-line:hover)
+  ):is(
+    :hover,
+    :has(~ :is(.HyperMD-list-line-7, .HyperMD-list-line-6):hover)
+  )::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-6:not(
+    :has(~ .HyperMD-list-line-6 ~ .HyperMD-list-line:hover)
+  ):is(:hover, :has(~ :is(.HyperMD-list-line-7):hover))::before,
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line-7:not(
+    :has(~ .HyperMD-list-line-7 ~ .HyperMD-list-line:hover)
+  ):hover::before {
+  content: "";
+  position: absolute;
+  left: var(--list-threading-offset);
+  width: var(--list-indent);
+  top: 0;
+  height: calc(
+    1.4 / 2 * var(--font-size-list) + var(--list-spacing-bt) * 0.075em * 1.5
+  );
+  border-bottom-left-radius: var(--radius-m);
+  border-bottom: var(--bt-indentation-width-hover) solid
+    var(--bt-connected-indent-line-color);
+  border-left: var(--bt-indentation-width-hover) solid
+    var(--bt-connected-indent-line-color);
+}
+body.bt-connected-indent-hover
+  .cm-s-obsidian:not(.kanban)
+  .HyperMD-list-line.HyperMD-task-line::before {
+  max-width: calc(var(--list-indent) - 0.35em);
+}
+
+body.bt-colorful-indentation-lines.bt-indentation-line-gradient ul ul::before,
+body.bt-colorful-indentation-lines.bt-indentation-line-gradient ol ol::before {
+  border-right-color: var(--bt-connected-indent-line-color) !important;
+  border-image: linear-gradient(
+      var(--bt-indentation-gradient-color-1),
+      var(--bt-indentation-gradient-color-2)
+    )
+    10;
+}
+
+body.bt-colorful-indentation-lines.bt-indentation-line-image
+  :is(ul, ol)
+  :is(ul, ol)::before {
+  border-right-color: var(--bt-connected-indent-line-color) !important;
+  border-image: var(--bt-indentation-line-image) 10;
+}
+
+body.bt-colorful-indentation-lines :is(ul, ol) :is(ul, ol)::before {
+  border-right-color: var(--bt-connected-indent-line-color) !important;
+  border-right-width: var(--bt-colorful-indentation-width);
+  border-right-style: double;
+}
+body.bt-colorful-indentation-lines :is(ul, ol) :is(ul, ol) :is(ul, ol)::before {
+  border-right-color: var(--bt-connected-indent-line-color) !important;
+  filter: hue-rotate(60deg);
+}
+body.bt-colorful-indentation-lines
+  :is(ul, ol)
+  :is(ul, ol)
+  :is(ul, ol)
+  :is(ul, ol)::before {
+  border-right-color: var(--bt-connected-indent-line-color) !important;
+  filter: hue-rotate(120deg);
+}
+body.bt-colorful-indentation-lines
+  :is(ul, ol)
+  :is(ul, ol)
+  :is(ul, ol)
+  :is(ul, ol)
+  :is(ul, ol)::before {
+  border-right-color: var(--bt-connected-indent-line-color) !important;
+  filter: hue-rotate(180deg);
+}
+body.bt-colorful-indentation-lines
+  :is(ul, ol)
+  :is(ul, ol)
+  :is(ul, ol)
+  :is(ul, ol)
+  :is(ul, ol)
+  :is(ul, ol)::before {
+  border-right-color: var(--bt-connected-indent-line-color) !important;
+  filter: hue-rotate(240deg);
+}
+body.bt-colorful-indentation-lines
+  :is(ul, ol)
+  :is(ul, ol)
+  :is(ul, ol)
+  :is(ul, ol)
+  :is(ul, ol)
+  :is(ul, ol)
+  :is(ul, ol)::before {
+  border-right-color: var(--bt-connected-indent-line-color) !important;
+  filter: hue-rotate(300deg);
+}
+
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-2
+  .cm-hmd-list-indent
+  > .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-3
+  .cm-hmd-list-indent
+  > .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-4
+  .cm-hmd-list-indent
+  > .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-5
+  .cm-hmd-list-indent
+  > .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-6
+  .cm-hmd-list-indent
+  > .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-7
+  .cm-hmd-list-indent
+  > .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-8
+  .cm-hmd-list-indent
+  > .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-9
+  .cm-hmd-list-indent
+  > .cm-indent::before {
+  border-color: var(--bt-connected-indent-line-color);
+}
+
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-3
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-4
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-5
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-6
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-7
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-8
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-9
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent::before {
+  border-color: var(--bt-connected-indent-line-color);
+  filter: hue-rotate(60deg);
+}
+
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-4
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-5
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-6
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-7
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-8
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-9
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before {
+  border-color: var(--bt-connected-indent-line-color);
+  filter: hue-rotate(120deg);
+}
+
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-5
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-6
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-7
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-8
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-9
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before {
+  border-color: var(--bt-connected-indent-line-color);
+  filter: hue-rotate(180deg);
+}
+
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-6
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-7
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-8
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-9
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before {
+  border-color: var(--bt-connected-indent-line-color);
+  filter: hue-rotate(240deg);
+}
+
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-7
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-8
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before,
+body.bt-colorful-indentation-lines-editing
+  .HyperMD-list-line-9
+  .cm-hmd-list-indent
+  > .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent
+  ~ .cm-indent::before {
+  border-color: var(--bt-connected-indent-line-color);
+  filter: hue-rotate(300deg);
+}
+
+body.bt-connected-indent-hover .markdown-preview-view:not(.kanban) li {
+  position: relative;
+}
+
+/* In-between items */
+body.bt-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li
+  > :is(ul, ol)
+  > li:has(~ li:hover)::before,
+body.bt-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  :is(ul, ol):has(~ *:hover)
+  > li::before {
+  content: "";
+  position: absolute;
+  background-color: var(--bt-connected-indent-line-color);
+  width: var(--bt-indentation-width-hover);
+  top: calc(var(--list-spacing-bt) * 0.075em - var(--font-size-list) * 0.6);
+  left: calc(-1.5 * var(--list-indent));
+  bottom: calc(var(--list-spacing-bt) * 0.075em - var(--font-size-list) * 0.5);
+}
+
+/* Elbows items */
+body.bt-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li
+  > :is(ul, ol)
+  > li:hover::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: calc(var(--list-spacing-bt) * 0.075em - var(--font-size-list) * 0.6);
+  left: calc(-1.5 * var(--list-indent));
+  width: calc(1em + var(--size-4-4));
+  height: calc(var(--font-size-list) * 1.27);
+  border-bottom-left-radius: var(--radius-m);
+  border-bottom: var(--bt-indentation-width-hover) solid
+    var(--bt-connected-indent-line-color);
+  border-left: var(--bt-indentation-width-hover) solid
+    var(--bt-connected-indent-line-color);
+}
+
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li:has(~ li:hover)::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li:hover::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li:hover
+  > :is(ul, ol)
+  > li
+  > ul:has(+ ol)
+  > li::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li:hover
+  > :is(ul, ol)
+  > li
+  > ol:has(+ ul)
+  > li::before {
+  filter: hue-rotate(60deg);
+}
+
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li:has(~ li:hover)::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li:hover::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li:hover
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > ul:has(+ ol)
+  > li::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li:hover
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > ol:has(+ ul)
+  > li::before {
+  filter: hue-rotate(120deg);
+}
+
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li:has(~ li:hover)::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li:hover::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li:hover
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > ul:has(+ ol)
+  > li::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li:hover
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > ol:has(+ ul)
+  > li::before {
+  filter: hue-rotate(180deg);
+}
+
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li:has(~ li:hover)::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li:hover::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li:hover
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > ul:has(+ ol)
+  > li::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li:hover
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > ol:has(+ ul)
+  > li::before {
+  filter: hue-rotate(240deg);
+}
+
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li:has(~ li:hover)::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li:hover::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li:hover
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > ul:has(+ ol)
+  > li::before,
+body.bt-connected-indent-hover.bt-colorful-connected-indent-hover
+  .markdown-preview-view:not(.kanban)
+  *:not([data-callout="kanban"])
+  > div
+  > :is(ul, ol)
+  li:hover
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > :is(ul, ol)
+  > li
+  > ol:has(+ ul)
+  > li::before {
+  filter: hue-rotate(300deg);
+}
+
+/* ================================================================================== */
+/* ------------------------------------- Kanban ------------------------------------- */
+/* ================================================================================== */
+.kanban-plugin__markdown-preview-view {
+  font-family: var(--font-text) !important;
+}
+.workspace-leaf .kanban-plugin__lane {
+  border-radius: 8px;
+  box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.1);
+}
+
+.kanban-plugin {
+  background-color: var(--background-secondary) !important;
+}
+
+.kanban-plugin .task-list-item-checkbox {
+  margin: 0px 7px 0px 0;
+}
+
+.kanban-plugin__markdown-preview-view blockquote {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.kanban-plugin__lane-header-wrapper {
+  background: var(--theme-color-translucent-015) !important;
+  padding: 8px 11px !important;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 0px !important;
+  z-index: 100 !important;
+  border-bottom: none !important;
+}
+
+.theme-dark .kanban-plugin__lane-header-wrapper {
+  background: unset !important;
+  padding: 8px 11px 0 !important;
+}
+
+.kanban-plugin__checkbox-wrapper {
+  background: var(--background-transparent-black-or-white-2);
+}
+
+.kanban-plugin__item {
+  border: none !important;
+  z-index: 100 !important;
+}
+
+.kanban-plugin__item-content-wrapper,
+.kanban-plugin__item-title-wrapper {
+  background: var(--background-transparent-black-or-white-1) !important;
+  z-index: 100 !important;
+}
+
+.kanban-plugin__item-content-wrapper:hover,
+.kanban-plugin__item-title-wrapper:hover {
+  background: var(--background-transparent-black-or-white-3-1) !important;
+}
+
+.kanban-plugin__item-button-wrapper {
+  background: var(--background-transparent-black-or-white-2) !important;
+  border-radius: 0 0 5px 5px;
+}
+
+button.kanban-plugin__new-item-button {
+  color: var(--text-muted) !important;
+  font-weight: bold;
+  font-size: 0.8em;
+  z-index: 100 !important;
+}
+
+button.kanban-plugin__new-item-button:hover {
+  color: var(--accent-strong) !important;
+}
+
+.kanban-plugin__lane {
+  border: none !important;
+}
+
+.kanban-plugin__lane-items {
+  padding: 4px !important;
+}
+
+/*meta*/
+.kanban-plugin__meta-row {
+  background: transparent !important;
+}
+
+.kanban-plugin__item-metadata-wrapper:not(:empty) {
+  background: var(--background-transparent-black-or-white-3) !important;
+}
+
+.kanban-plugin__lane {
+  background: transparent !important;
+}
+
+.theme-light .kanban-plugin__lane {
+  background: var(--background-transparent-black-or-white-3) !important;
+}
+
+.kanban-plugin__lane-wrapper {
+  border-radius: var(--radius-s);
+}
+
+.kanban-plugin__lane-wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* checkbox */
+.kanban-plugin__item-prefix-button-wrapper input[type="checkbox"] {
+  margin: 1px 6px 0 0;
+  width: 14px;
+  height: 14px;
+  filter: hue-rotate(var(--theme-color)) !important;
+}
+
+.theme-dark .kanban-plugin__lane-wrapper:nth-child(7n + 1) {
+  background: linear-gradient(
+    to bottom,
+    var(--kanban-color-1) 60%,
+    transparent
+  );
+  --scrollbar-thumb-bg: color-mix(
+    in srgb,
+    var(--kanban-color-1),
+    transparent 60%
+  );
+  --scrollbar-active-thumb-bg: var(--kanban-color-1);
+}
+.theme-dark .kanban-plugin__lane-wrapper:nth-child(7n + 2) {
+  background: linear-gradient(
+    to bottom,
+    var(--kanban-color-2) 60%,
+    transparent
+  );
+  --scrollbar-thumb-bg: color-mix(
+    in srgb,
+    var(--kanban-color-2),
+    transparent 60%
+  );
+  --scrollbar-active-thumb-bg: var(--kanban-color-2);
+}
+.theme-dark .kanban-plugin__lane-wrapper:nth-child(7n + 3) {
+  background: linear-gradient(
+    to bottom,
+    var(--kanban-color-3) 60%,
+    transparent
+  );
+  --scrollbar-thumb-bg: color-mix(
+    in srgb,
+    var(--kanban-color-3),
+    transparent 60%
+  );
+  --scrollbar-active-thumb-bg: var(--kanban-color-3);
+}
+.theme-dark .kanban-plugin__lane-wrapper:nth-child(7n + 4) {
+  background: linear-gradient(
+    to bottom,
+    var(--kanban-color-4) 60%,
+    transparent
+  );
+  --scrollbar-thumb-bg: color-mix(
+    in srgb,
+    var(--kanban-color-4),
+    transparent 60%
+  );
+  --scrollbar-active-thumb-bg: var(--kanban-color-4);
+}
+.theme-dark .kanban-plugin__lane-wrapper:nth-child(7n + 5) {
+  background: linear-gradient(
+    to bottom,
+    var(--kanban-color-5) 60%,
+    transparent
+  );
+  --scrollbar-thumb-bg: color-mix(
+    in srgb,
+    var(--kanban-color-5),
+    transparent 60%
+  );
+  --scrollbar-active-thumb-bg: var(--kanban-color-5);
+}
+.theme-dark .kanban-plugin__lane-wrapper:nth-child(7n + 6) {
+  background: linear-gradient(
+    to bottom,
+    var(--kanban-color-6) 60%,
+    transparent
+  );
+  --scrollbar-thumb-bg: color-mix(
+    in srgb,
+    var(--kanban-color-6),
+    transparent 60%
+  );
+  --scrollbar-active-thumb-bg: var(--kanban-color-6);
+}
+.theme-dark .kanban-plugin__lane-wrapper:nth-child(7n + 0) {
+  background: linear-gradient(
+    to bottom,
+    var(--kanban-color-7) 60%,
+    transparent
+  );
+  --scrollbar-thumb-bg: color-mix(
+    in srgb,
+    var(--kanban-color-7),
+    transparent 60%
+  );
+  --scrollbar-active-thumb-bg: var(--kanban-color-7);
+}
+
+body.style-options-for-kanban-plugin-static-all-color.theme-light {
+  --kanban-color-1: #63a1e970;
+  --kanban-color-2: #63e6e970;
+  --kanban-color-3: #63e98270;
+  --kanban-color-4: #dee96370;
+  --kanban-color-5: #e8c89170;
+  --kanban-color-6: #e8919170;
+  --kanban-color-7: #bd91e870;
+}
+
+body.style-options-for-kanban-plugin-static-all-color.theme-light
+  .kanban-plugin__lane-wrapper:nth-child(7n + 1) {
+  background: linear-gradient(
+    to bottom,
+    var(--kanban-color-1) 30%,
+    transparent
+  ) !important;
+  --scrollbar-thumb-bg: color-mix(
+    in srgb,
+    var(--kanban-color-1),
+    transparent 60%
+  );
+  --scrollbar-active-thumb-bg: var(--kanban-color-1);
+}
+body.style-options-for-kanban-plugin-static-all-color.theme-light
+  .kanban-plugin__lane-wrapper:nth-child(7n + 2) {
+  background: linear-gradient(
+    to bottom,
+    var(--kanban-color-2) 30%,
+    transparent
+  ) !important;
+  --scrollbar-thumb-bg: color-mix(
+    in srgb,
+    var(--kanban-color-2),
+    transparent 60%
+  );
+  --scrollbar-active-thumb-bg: var(--kanban-color-2);
+}
+body.style-options-for-kanban-plugin-static-all-color.theme-light
+  .kanban-plugin__lane-wrapper:nth-child(7n + 3) {
+  background: linear-gradient(
+    to bottom,
+    var(--kanban-color-3) 30%,
+    transparent
+  ) !important;
+  --scrollbar-thumb-bg: color-mix(
+    in srgb,
+    var(--kanban-color-3),
+    transparent 60%
+  );
+  --scrollbar-active-thumb-bg: var(--kanban-color-3);
+}
+body.style-options-for-kanban-plugin-static-all-color.theme-light
+  .kanban-plugin__lane-wrapper:nth-child(7n + 4) {
+  background: linear-gradient(
+    to bottom,
+    var(--kanban-color-4) 30%,
+    transparent
+  ) !important;
+  --scrollbar-thumb-bg: color-mix(
+    in srgb,
+    var(--kanban-color-4),
+    transparent 60%
+  );
+  --scrollbar-active-thumb-bg: var(--kanban-color-4);
+}
+body.style-options-for-kanban-plugin-static-all-color.theme-light
+  .kanban-plugin__lane-wrapper:nth-child(7n + 5) {
+  background: linear-gradient(
+    to bottom,
+    var(--kanban-color-5) 30%,
+    transparent
+  ) !important;
+  --scrollbar-thumb-bg: color-mix(
+    in srgb,
+    var(--kanban-color-5),
+    transparent 60%
+  );
+  --scrollbar-active-thumb-bg: var(--kanban-color-5);
+}
+body.style-options-for-kanban-plugin-static-all-color.theme-light
+  .kanban-plugin__lane-wrapper:nth-child(7n + 6) {
+  background: linear-gradient(
+    to bottom,
+    var(--kanban-color-6) 30%,
+    transparent
+  ) !important;
+  --scrollbar-thumb-bg: color-mix(
+    in srgb,
+    var(--kanban-color-6),
+    transparent 60%
+  );
+  --scrollbar-active-thumb-bg: var(--kanban-color-6);
+}
+body.style-options-for-kanban-plugin-static-all-color.theme-light
+  .kanban-plugin__lane-wrapper:nth-child(7n + 0) {
+  background: linear-gradient(
+    to bottom,
+    var(--kanban-color-7) 30%,
+    transparent
+  ) !important;
+  --scrollbar-thumb-bg: color-mix(
+    in srgb,
+    var(--kanban-color-7),
+    transparent 60%
+  );
+  --scrollbar-active-thumb-bg: var(--kanban-color-7);
+}
+body.style-options-for-kanban-plugin-static-all-color
+  .kanban-plugin__item-title-wrapper {
+  background: transparent !important;
+}
+
+body.style-options-for-kanban-plugin-static-all-image-one.theme-dark
+  .kanban-plugin__lane-wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body.style-options-for-kanban-plugin-static-all-image-two.theme-dark
+  .kanban-plugin__lane-wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body.style-options-for-kanban-plugin-static-plain .kanban-plugin__lane-wrapper {
+  background: unset !important;
+  --scrollbar-thumb-bg: unset !important;
+  --scrollbar-active-thumb-bg: unset !important;
+}
+
+body.style-options-for-kanban-plugin-static-plain .kanban-plugin__lane {
+  border: 2px solid var(--background-modifier-border) !important;
+}
+
+body.style-options-for-kanban-plugin-static-plain
+  .kanban-plugin__lane-header-wrapper {
+  background: unset !important;
+  border-bottom: 1px solid var(--background-modifier-border) !important;
+}
+
+body.style-options-for-kanban-plugin-static-plain.theme-dark
+  .kanban-plugin__lane-header-wrapper,
+body.style-options-for-kanban-plugin-static-little-color.theme-dark
+  .kanban-plugin__lane-header-wrapper {
+  padding: 10px 11px !important;
+}
+
+body.style-options-for-kanban-plugin-static-plain
+  .kanban-plugin__item-button-wrapper {
+  background: transparent !important;
+}
+
+body.style-options-for-kanban-plugin-static-little-color.theme-light {
+  --kanban-color-1: #91bae870;
+  --kanban-color-2: #91e8e070;
+  --kanban-color-3: #91e89a70;
+  --kanban-color-4: #e0e89170;
+  --kanban-color-5: #e8c89170;
+  --kanban-color-6: #e8919170;
+  --kanban-color-7: #bd91e870;
+}
+
+body.style-options-for-kanban-plugin-static-little-color.style-options-for-kanban-plugin-dynamic-neon-three
+  .kanban-plugin__lane,
+body.style-options-for-kanban-plugin-static-plain.style-options-for-kanban-plugin-dynamic-neon-three
+  .kanban-plugin__lane,
+body.style-options-for-kanban-plugin-static-little-color.style-options-for-kanban-plugin-dynamic-neon-one
+  .kanban-plugin__lane,
+body.style-options-for-kanban-plugin-static-plain.style-options-for-kanban-plugin-dynamic-neon-one
+  .kanban-plugin__lane,
+body.style-options-for-kanban-plugin-static-little-color.style-options-for-kanban-plugin-dynamic-neon-two
+  .kanban-plugin__lane,
+body.style-options-for-kanban-plugin-static-plain.style-options-for-kanban-plugin-dynamic-neon-two
+  .kanban-plugin__lane {
+  border: none !important;
+}
+
+body.style-options-for-kanban-plugin-static-little-color .kanban-plugin__item,
+body.style-options-for-kanban-plugin-static-little-color .kanban-plugin__lane {
+  border: 1px solid var(--background-modifier-border) !important;
+}
+
+body.style-options-for-kanban-plugin-static-little-color
+  .kanban-plugin__lane-wrapper {
+  background-image: unset !important;
+  background-color: transparent !important;
+}
+body.style-options-for-kanban-plugin-static-little-color
+  .kanban-plugin__lane-wrapper:nth-child(7n + 1)
+  .kanban-plugin__lane-header-wrapper {
+  background-color: var(--kanban-color-1) !important;
+}
+body.style-options-for-kanban-plugin-static-little-color
+  .kanban-plugin__lane-wrapper:nth-child(7n + 2)
+  .kanban-plugin__lane-header-wrapper {
+  background-color: var(--kanban-color-2) !important;
+}
+body.style-options-for-kanban-plugin-static-little-color
+  .kanban-plugin__lane-wrapper:nth-child(7n + 3)
+  .kanban-plugin__lane-header-wrapper {
+  background-color: var(--kanban-color-3) !important;
+}
+body.style-options-for-kanban-plugin-static-little-color
+  .kanban-plugin__lane-wrapper:nth-child(7n + 4)
+  .kanban-plugin__lane-header-wrapper {
+  background-color: var(--kanban-color-4) !important;
+}
+body.style-options-for-kanban-plugin-static-little-color
+  .kanban-plugin__lane-wrapper:nth-child(7n + 5)
+  .kanban-plugin__lane-header-wrapper {
+  background-color: var(--kanban-color-5) !important;
+}
+body.style-options-for-kanban-plugin-static-little-color
+  .kanban-plugin__lane-wrapper:nth-child(7n + 6)
+  .kanban-plugin__lane-header-wrapper {
+  background-color: var(--kanban-color-6) !important;
+}
+body.style-options-for-kanban-plugin-static-little-color
+  .kanban-plugin__lane-wrapper:nth-child(7n)
+  .kanban-plugin__lane-header-wrapper {
+  background-color: var(--kanban-color-7) !important;
+}
+
+/* Kanban Neon, v0.5, for Blue Topaz, modified from https://codepen.io/Chokcoco/pen/BaQzBEG by @Chokcoco */
+body.style-options-for-kanban-plugin-dynamic-neon-one.theme-dark,
+body.style-options-for-kanban-plugin-dynamic-neon-two.theme-dark,
+body.style-options-for-kanban-plugin-dynamic-neon-three.theme-dark {
+  --background-transparent-black-or-white-1: #232323c2;
+  --background-transparent-black-or-white-2: #0f0f0f69;
+  --background-transparent-black-or-white-3: #2222224d;
+  --background-transparent-blue: #53a3ff41;
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-one.theme-light,
+body.style-options-for-kanban-plugin-dynamic-neon-two.theme-light,
+body.style-options-for-kanban-plugin-dynamic-neon-three.theme-light {
+  --background-transparent-black-or-white-1: #ffffffb0;
+  --background-transparent-black-or-white-2: #eeeeee88;
+  --background-transparent-black-or-white-3: #f5f5f583;
+  --background-transparent-blue: #5eb6ff44;
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-one .kanban-plugin,
+body.style-options-for-kanban-plugin-dynamic-neon-two .kanban-plugin,
+body.style-options-for-kanban-plugin-dynamic-neon-three .kanban-plugin {
+  background-color: var(--background-secondary-alt) !important;
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-one.theme-dark
+  .kanban-plugin__lane-header-wrapper,
+body.style-options-for-kanban-plugin-dynamic-neon-two.theme-dark
+  .kanban-plugin__lane-header-wrapper,
+body.style-options-for-kanban-plugin-dynamic-neon-three.theme-dark
+  .kanban-plugin__lane-header-wrapper {
+  background: var(--background-transparent-blue) !important;
+  padding: 5px 11px !important;
+  border-radius: 6px 6px 0 0;
+  margin-bottom: 5px !important;
+  z-index: 100 !important;
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-one
+  .kanban-plugin__lane-wrapper:nth-child(n) {
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+  -webkit-box-reflect: below 10px
+    linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-one
+  .kanban-plugin__lane-wrapper:nth-child(n)::before,
+body.style-options-for-kanban-plugin-dynamic-neon-two
+  .kanban-plugin__lane-wrapper:nth-child(n)::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 125%;
+  background-color: var(--background-secondary-alt) !important;
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  background-position: 0 0;
+  background-image: conic-gradient(var(--kanban-shadow), var(--kanban-shadow));
+  animation: rotate 2s linear infinite;
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-one
+  .kanban-plugin__lane-wrapper:nth-child(n)::after,
+body.style-options-for-kanban-plugin-dynamic-neon-two
+  .kanban-plugin__lane-wrapper:nth-child(n)::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 2px;
+  top: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  background-color: var(--background-secondary-alt) !important;
+  border-radius: 10px;
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-two
+  .kanban-plugin__lane-wrapper:nth-child(n) {
+  background: unset !important;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 0px 5px 1px var(--kanban-shadow);
+}
+
+@keyframes rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-one
+  .kanban-plugin__lane-wrapper:nth-child(n):hover
+  body.style-options-for-kanban-plugin-dynamic-neon-two
+  .kanban-plugin__lane-wrapper:nth-child(n):hover {
+  box-shadow: 0 0 5px var(--kanban-shadow), 0 0 25px var(--kanban-shadow);
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-one
+  .kanban-plugin__lane-wrapper:nth-child(n):hover::after,
+body.style-options-for-kanban-plugin-dynamic-neon-one
+  .kanban-plugin__lane-wrapper:nth-child(n):hover::before,
+body.style-options-for-kanban-plugin-dynamic-neon-two
+  .kanban-plugin__lane-wrapper:nth-child(n):hover::after,
+body.style-options-for-kanban-plugin-dynamic-neon-two
+  .kanban-plugin__lane-wrapper:nth-child(n):hover::before {
+  transition: 0.3s;
+  background: linear-gradient(
+    to bottom,
+    var(--kanban-shadow) 30%,
+    transparent
+  ) !important;
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-one
+  .kanban-plugin__lane-wrapper:nth-child(7n + 2),
+body.style-options-for-kanban-plugin-dynamic-neon-two
+  .kanban-plugin__lane-wrapper:nth-child(7n + 2) {
+  filter: hue-rotate(50deg);
+}
+body.style-options-for-kanban-plugin-dynamic-neon-one
+  .kanban-plugin__lane-wrapper:nth-child(7n + 3),
+body.style-options-for-kanban-plugin-dynamic-neon-two
+  .kanban-plugin__lane-wrapper:nth-child(7n + 3) {
+  filter: hue-rotate(140deg);
+}
+body.style-options-for-kanban-plugin-dynamic-neon-one
+  .kanban-plugin__lane-wrapper:nth-child(7n + 4),
+body.style-options-for-kanban-plugin-dynamic-neon-two
+  .kanban-plugin__lane-wrapper:nth-child(7n + 4) {
+  filter: hue-rotate(180deg);
+}
+body.style-options-for-kanban-plugin-dynamic-neon-one
+  .kanban-plugin__lane-wrapper:nth-child(7n + 5),
+body.style-options-for-kanban-plugin-dynamic-neon-two
+  .kanban-plugin__lane-wrapper:nth-child(7n + 5) {
+  filter: hue-rotate(220deg);
+}
+body.style-options-for-kanban-plugin-dynamic-neon-one
+  .kanban-plugin__lane-wrapper:nth-child(7n + 6),
+body.style-options-for-kanban-plugin-dynamic-neon-two
+  .kanban-plugin__lane-wrapper:nth-child(7n + 6) {
+  filter: hue-rotate(280deg);
+}
+body.style-options-for-kanban-plugin-dynamic-neon-one
+  .kanban-plugin__lane-wrapper:nth-child(7n)
+  body.style-options-for-kanban-plugin-dynamic-neon-two
+  .kanban-plugin__lane-wrapper:nth-child(7n) {
+  filter: hue-rotate(330deg);
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-three
+  .kanban-plugin__lane-wrapper:nth-child(n) {
+  background: unset !important;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: huerotate-1 6s infinite linear;
+  filter: hue-rotate(360deg);
+}
+
+@keyframes huerotate-1 {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-three
+  .kanban-plugin__lane-wrapper:nth-child(n)::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 250%;
+  height: 300%;
+  background-color: var(--background-secondary-alt) !important;
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  background-position: 0 0;
+  background-image: conic-gradient(var(--kanban-shadow), var(--kanban-shadow));
+  animation: rotate 2s linear infinite;
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-three
+  .kanban-plugin__lane-wrapper:nth-child(n)::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 2px;
+  top: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  background-color: var(--background-secondary-alt) !important;
+  border-radius: 10px;
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-three
+  .kanban-plugin__lane-wrapper:nth-child(n):hover {
+  box-shadow: 0 0 5px var(--kanban-shadow), 0 0 25px var(--kanban-shadow);
+}
+body.style-options-for-kanban-plugin-dynamic-neon-three
+  .kanban-plugin__lane-wrapper:nth-child(n):hover::after,
+body.style-options-for-kanban-plugin-dynamic-neon-three
+  .kanban-plugin__lane-wrapper:nth-child(n):hover::before {
+  transition: 0.3s;
+  background: var(--kanban-shadow);
+}
+body.style-options-for-kanban-plugin-dynamic-neon-three
+  .kanban-plugin__lane-wrapper:nth-child(7n + 2) {
+  animation: huerotate-2 6s infinite linear;
+  filter: hue-rotate(410deg);
+}
+
+@keyframes huerotate-2 {
+  0% {
+    filter: hue-rotate(50deg);
+  }
+  100% {
+    filter: hue-rotate(410deg);
+  }
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-three
+  .kanban-plugin__lane-wrapper:nth-child(7n + 3) {
+  animation: huerotate-3 6s infinite linear;
+  filter: hue-rotate(500deg);
+}
+
+@keyframes huerotate-3 {
+  0% {
+    filter: hue-rotate(140deg);
+  }
+  100% {
+    filter: hue-rotate(500deg);
+  }
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-three
+  .kanban-plugin__lane-wrapper:nth-child(7n + 4) {
+  filter: hue-rotate(540deg);
+  animation: huerotate-4 6s infinite linear;
+}
+
+@keyframes huerotate-4 {
+  0% {
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    filter: hue-rotate(540deg);
+  }
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-three
+  .kanban-plugin__lane-wrapper:nth-child(7n + 5) {
+  filter: hue-rotate(580deg);
+  animation: huerotate-5 6s infinite linear;
+}
+
+@keyframes huerotate-5 {
+  0% {
+    filter: hue-rotate(220deg);
+  }
+  100% {
+    filter: hue-rotate(580deg);
+  }
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-three
+  .kanban-plugin__lane-wrapper:nth-child(7n + 6) {
+  filter: hue-rotate(640deg);
+  animation: huerotate-6 6s infinite linear;
+}
+
+@keyframes huerotate-6 {
+  0% {
+    filter: hue-rotate(280deg);
+  }
+  100% {
+    filter: hue-rotate(640deg);
+  }
+}
+
+body.style-options-for-kanban-plugin-dynamic-neon-three
+  .kanban-plugin__lane-wrapper:nth-child(7n + 0) {
+  filter: hue-rotate(690deg);
+  animation: huerotate-7 6s infinite linear;
+}
+
+@keyframes huerotate-7 {
+  0% {
+    filter: hue-rotate(330deg);
+  }
+  100% {
+    filter: hue-rotate(690deg);
+  }
+}
+
+/* ================================================================================== */
+/* ----------------------------------- Admonition ----------------------------------- */
+/* ================================================================================== */
+body.style-options-for-admonition-plugin .admonition {
+  break-inside: avoid;
+}
+
+body.style-options-for-admonition-plugin
+  .callout.admonition
+  .admonition-content {
+  overflow: hidden;
+}
+
+.admonition.callout {
+  border-color: rgba(var(--callout-color), 0.15);
+}
+.callout:not(.admonition).drop-shadow {
+  box-shadow: var(--window-shadow2);
+}
+.callout.admonition.admonition-plugin.is-collapsed {
+  overflow: hidden;
+}
+/* ad伪看板效果*/
+body.style-options-for-admonition-plugin .admonition-kanban {
+  overflow: visible;
+  background-color: rgba(255, 255, 255, 0) !important;
+  border-left: none !important;
+  margin: auto;
+  box-shadow: none !important;
+}
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  .admonition-content {
+  overflow: visible;
+  margin: 0;
+}
+
+body.style-options-for-admonition-plugin .admonition-kanban .is-mobile ul {
+  display: flex;
+}
+
+body.style-options-for-admonition-plugin .admonition-kanban ul {
+  display: flex;
+  margin: 0;
+  flex-direction: row;
+  border: none;
+  padding: 0;
+  border-radius: var(--radius-m);
+  flex-wrap: wrap;
+}
+
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ul
+  > li:not(.task-list-item) {
+  flex: 1 1 20%;
+  padding: 0.1em 1em 0.1em 0.8em !important;
+  margin: 0 0.1em 0.3em 0 !important;
+  list-style: none;
+  border: 1px solid var(--p-kanban-border-color);
+  border-left: 1px solid var(--p-kanban-border-color) !important;
+  border-radius: var(--radius-s);
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ul
+  .list-collapse-indicator.collapse-indicator.collapse-icon {
+  margin-left: -1.2em;
+  position: absolute;
+}
+
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ul
+  .list-collapse-indicator.collapse-indicator.collapse-icon::before {
+  color: var(--text-accent);
+  transition: transform 10ms linear 0s;
+}
+
+body.style-options-for-admonition-plugin.colorful-p-kanban
+  .admonition-kanban
+  ul
+  > li:nth-of-type(8n + 1) {
+  background-color: var(--p-kanban-color-1);
+  padding-left: 2em;
+}
+body.style-options-for-admonition-plugin.colorful-p-kanban
+  .admonition-kanban
+  ul
+  > li:nth-of-type(8n + 2) {
+  background-color: var(--p-kanban-color-2);
+  padding-left: 2em;
+}
+body.style-options-for-admonition-plugin.colorful-p-kanban
+  .admonition-kanban
+  ul
+  > li:nth-of-type(8n + 3) {
+  background-color: var(--p-kanban-color-3);
+  padding-left: 2em;
+}
+body.style-options-for-admonition-plugin.colorful-p-kanban
+  .admonition-kanban
+  ul
+  > li:nth-of-type(8n + 4) {
+  background-color: var(--p-kanban-color-4);
+  padding-left: 2em;
+}
+body.style-options-for-admonition-plugin.colorful-p-kanban
+  .admonition-kanban
+  ul
+  > li:nth-of-type(8n + 5) {
+  background-color: var(--p-kanban-color-5);
+  padding-left: 2em;
+}
+body.style-options-for-admonition-plugin.colorful-p-kanban
+  .admonition-kanban
+  ul
+  > li:nth-of-type(8n + 6) {
+  background-color: var(--p-kanban-color-6);
+  padding-left: 2em;
+}
+body.style-options-for-admonition-plugin.colorful-p-kanban
+  .admonition-kanban
+  ul
+  > li:nth-of-type(8n + 7) {
+  background-color: var(--p-kanban-color-7);
+  padding-left: 2em;
+}
+body.style-options-for-admonition-plugin.colorful-p-kanban
+  .admonition-kanban
+  ul
+  > li:nth-of-type(8n) {
+  background-color: var(--p-kanban-color-8);
+  padding-left: 2em;
+}
+
+body.style-options-for-admonition-plugin .admonition-kanban ul ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  margin-top: 0.5rem;
+  border-radius: 0;
+  border: 0;
+  background: none;
+}
+
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ul
+  ul
+  li:not(.task-list-item) {
+  width: 100%;
+  display: block;
+  background-color: var(--p-kanban-card-color-1) !important;
+}
+
+body.style-options-for-admonition-plugin .admonition-kanban ul > li:hover {
+  border-color: var(--p-kanban-border-color) !important;
+}
+
+body.style-options-for-admonition-plugin .admonition-kanban ul ul li:hover {
+  background: transparent !important;
+  border-color: var(--p-kanban-border-color) !important;
+  border-left: 1px solid var(--p-kanban-border-color) !important;
+}
+
+.theme-dark
+  body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ul
+  ul
+  li:hover {
+  border-color: #696969e1 !important;
+  border-left: 1px solid #696969e1 !important;
+}
+
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ul
+  ul
+  li
+  .task-list-item-checkbox {
+  margin-left: 1.5rem;
+}
+
+body.style-options-for-admonition-plugin .admonition-kanban ul ul ul {
+  margin-right: 0;
+}
+
+body.style-options-for-admonition-plugin .admonition-kanban ul ul::before {
+  border-left: 0;
+}
+
+:is(
+    .markdown-preview-view,
+    .markdown-rendered
+  ).is-readable-line-widthbody.style-options-for-admonition-plugin
+  .admonition-kanban
+  .markdown-preview-sizer
+  > div
+  > ul {
+  max-width: 100%;
+}
+
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ul.contains-task-list
+  ul,
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ol.contains-task-list
+  ul,
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ul.contains-task-list
+  ol,
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ol.contains-task-list
+  ol {
+  position: initial;
+}
+
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ul.contains-task-list
+  ul::before,
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ol.contains-task-list
+  ul::before,
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ul.contains-task-list
+  ol::before,
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ol.contains-task-list
+  ol::before {
+  all: initial;
+}
+
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ul
+  > li.task-list-item {
+  flex: 1 1 20%;
+  padding: 0.1em 1em;
+  margin: 0 0.1em 0.3em 0;
+  list-style: none;
+  border: 1px solid var(--p-kanban-border-color);
+  border-left: 1px solid var(--p-kanban-border-color) !important;
+  border-radius: var(--radius-s);
+  word-wrap: break-word;
+  word-break: break-word;
+  text-indent: 0;
+}
+
+body.style-options-for-admonition-plugin
+  .admonition-kanban
+  ul
+  ul
+  li.task-list-item {
+  width: 100%;
+  display: block;
+  padding-left: 2em;
+  text-indent: -3.1em;
+  background-color: var(--p-kanban-card-color-1) !important;
+}
+
+/* ================================================================================== */
+/* ------------------------------------- Callout ------------------------------------ */
+/* ================================================================================== */
+.callout.callout[data-callout*="kanban"] ul {
+  display: flex;
+  flex-direction: row;
+  border: 0px solid var(--p-kanban-border-color);
+  padding: 0;
+  border-radius: var(--radius-m);
+  flex-wrap: wrap;
+}
+.callout.callout[data-callout*="kanban"] li .list-bullet {
+  display: none;
+}
+
+.callout.callout[data-callout*="kanban"] ul > li {
+  flex: 1 1 20%;
+  padding: 0.1em 1em 0.1em 0.8em;
+  margin: 0 0.3em 0.3em 0 !important;
+  list-style: none;
+  border: 1px solid var(--p-kanban-border-color);
+  border-left: 1px solid var(--p-kanban-border-color) !important;
+  border-radius: var(--radius-s);
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.callout.callout[data-callout*="kanban"]
+  ul
+  li.task-list-item
+  .task-list-item-checkbox {
+  margin-left: auto;
+}
+
+.callout.callout[data-callout*="kanban"]
+  ul
+  .list-collapse-indicator.collapse-indicator.collapse-icon::before {
+  color: var(--text-accent);
+  transition: transform 10ms linear 0s;
+}
+
+body.colorful-p-kanban
+  .callout.callout[data-callout*="kanban"]
+  ul
+  > li:nth-of-type(8n + 1) {
+  background-color: var(--p-kanban-color-1);
+}
+body.colorful-p-kanban
+  .callout.callout[data-callout*="kanban"]
+  ul
+  > li:nth-of-type(8n + 2) {
+  background-color: var(--p-kanban-color-2);
+}
+body.colorful-p-kanban
+  .callout.callout[data-callout*="kanban"]
+  ul
+  > li:nth-of-type(8n + 3) {
+  background-color: var(--p-kanban-color-3);
+}
+body.colorful-p-kanban
+  .callout.callout[data-callout*="kanban"]
+  ul
+  > li:nth-of-type(8n + 4) {
+  background-color: var(--p-kanban-color-4);
+}
+body.colorful-p-kanban
+  .callout.callout[data-callout*="kanban"]
+  ul
+  > li:nth-of-type(8n + 5) {
+  background-color: var(--p-kanban-color-5);
+}
+body.colorful-p-kanban
+  .callout.callout[data-callout*="kanban"]
+  ul
+  > li:nth-of-type(8n + 6) {
+  background-color: var(--p-kanban-color-6);
+}
+body.colorful-p-kanban
+  .callout.callout[data-callout*="kanban"]
+  ul
+  > li:nth-of-type(8n + 7) {
+  background-color: var(--p-kanban-color-7);
+}
+body.colorful-p-kanban
+  .callout.callout[data-callout*="kanban"]
+  ul
+  > li:nth-of-type(8n) {
+  background-color: var(--p-kanban-color-8);
+}
+
+.callout.callout[data-callout*="kanban"] ul > li:nth-of-type(n) {
+  background-color: var(--p-kanban-color-simple);
+  padding-left: 1em;
+}
+.callout.callout[data-callout*="kanban"]
+  .callout-content
+  > ul:first-child
+  > li:nth-of-type(8n + 1) {
+  border-top: 6px solid var(--p-kanban-color-1) !important;
+}
+.callout.callout[data-callout*="kanban"]
+  .callout-content
+  > ul:first-child
+  > li:nth-of-type(8n + 2) {
+  border-top: 6px solid var(--p-kanban-color-2) !important;
+}
+.callout.callout[data-callout*="kanban"]
+  .callout-content
+  > ul:first-child
+  > li:nth-of-type(8n + 3) {
+  border-top: 6px solid var(--p-kanban-color-3) !important;
+}
+.callout.callout[data-callout*="kanban"]
+  .callout-content
+  > ul:first-child
+  > li:nth-of-type(8n + 4) {
+  border-top: 6px solid var(--p-kanban-color-4) !important;
+}
+.callout.callout[data-callout*="kanban"]
+  .callout-content
+  > ul:first-child
+  > li:nth-of-type(8n + 5) {
+  border-top: 6px solid var(--p-kanban-color-5) !important;
+}
+.callout.callout[data-callout*="kanban"]
+  .callout-content
+  > ul:first-child
+  > li:nth-of-type(8n + 6) {
+  border-top: 6px solid var(--p-kanban-color-6) !important;
+}
+.callout.callout[data-callout*="kanban"]
+  .callout-content
+  > ul:first-child
+  > li:nth-of-type(8n + 7) {
+  border-top: 6px solid var(--p-kanban-color-7) !important;
+}
+.callout.callout[data-callout*="kanban"]
+  .callout-content
+  > ul:first-child
+  > li:nth-of-type(8n) {
+  border-top: 6px solid var(--p-kanban-color-8) !important;
+}
+body.simple-p-kanban
+  .callout.callout[data-callout*="kanban"]
+  ul:first-child
+  > li:nth-of-type(n) {
+  border-top: none !important;
+}
+
+body:not(.remove-shadow-p-kanban)
+  .callout.callout[data-callout*="kanban"]
+  ul
+  > li:hover {
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+  box-shadow: 0 3px 5px 0 var(--p-kanban-color-shadow),
+    0 3px 1px -3px var(--p-kanban-color-shadow),
+    2px 3px 3px 0 var(--p-kanban-color-shadow);
+}
+
+.callout.callout[data-callout*="kanban"] ul ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0rem;
+  margin-top: 0.5rem;
+  border-radius: 0;
+  border: 0;
+  background: none;
+}
+
+.callout.callout[data-callout*="kanban"] ul ul li:not(.task-list-item) {
+  width: 100%;
+  display: block;
+  background-color: var(--p-kanban-card-color-1) !important;
+}
+
+body.remove-shadow-p-kanban
+  .callout.callout[data-callout*="kanban"]
+  ul
+  ul
+  li:hover {
+  background: var(--p-kanban-card-color-2) !important;
+  border-color: var(--p-kanban-border-color) !important;
+  border-left: 1px solid var(--p-kanban-border-color) !important;
+}
+
+body.remove-shadow-p-kanban.theme-dark
+  .callout.callout[data-callout*="kanban"]
+  ul
+  ul
+  li:hover {
+  border-color: #696969e1 !important;
+  border-left: 1px solid #696969e1 !important;
+}
+
+.callout.callout[data-callout*="kanban"] ul ul li .task-list-item-checkbox {
+  margin-left: 1.5rem !important;
+}
+
+.callout.callout[data-callout*="kanban"] ul ul ul {
+  margin-right: 0;
+}
+
+.callout.callout[data-callout*="kanban"] ul ul::before {
+  border-left: 0;
+  border: 0;
+}
+
+:is(
+    .markdown-preview-view,
+    .markdown-rendered
+  ).is-readable-line-width.callout.callout[data-callout*="kanban"]
+  .markdown-preview-sizer
+  > div
+  > ul {
+  max-width: 100%;
+}
+
+.callout.callout[data-callout*="kanban"]
+  :is(ol, ul).contains-task-list
+  :is(ol, ul) {
+  position: initial;
+}
+
+.callout.callout[data-callout*="kanban"]
+  :is(ol, ul).contains-task-list
+  :is(ol, ul)::before {
+  all: initial;
+}
+
+.callout.callout[data-callout*="kanban"] ul > li.task-list-item {
+  flex: 1 1 20%;
+  padding: 0.1em 0.1em 1em 2em;
+  list-style: none;
+  border: 1px solid var(--p-kanban-border-color);
+  border-left: 1px solid var(--p-kanban-border-color) !important;
+  border-radius: var(--radius-s);
+  word-wrap: break-word;
+  word-break: break-word;
+  text-indent: 0.01em;
+}
+
+.callout.callout[data-callout*="kanban"] ul ul li.task-list-item {
+  width: 100%;
+  display: block;
+  padding-left: 2em;
+  text-indent: -3em;
+  background-color: var(--p-kanban-card-color-1) !important;
+}
+
+.callout.callout[data-callout*="kanban"]
+  ul
+  ul
+  li.task-list-item
+  .list-collapse-indicator.collapse-indicator.collapse-icon {
+  text-indent: -1em;
+}
+
+body:not(.default-icons)
+  .callout.callout[data-callout*="kanban"]
+  li.task-list-item
+  .list-collapse-indicator.collapse-indicator.collapse-icon::before {
+  margin-left: -0.2em;
+}
+
+body:not(.default-icons)
+  .callout.callout[data-callout*="kanban"]
+  li.task-list-item
+  .task-list-item.is-collapsed
+  .list-collapse-indicator.collapse-indicator.collapse-icon::before {
+  transform: translateX(-0.9em) translateY(-1em) rotate(-90deg);
+}
+
+body.colorful-p-kanban
+  .callout.callout[data-callout*="kanban"]
+  .task-list-item-checkbox {
+  border-color: var(--text-normal) !important;
+}
