@@ -1,0 +1,171 @@
+/* ────────── Kanban by mgmeyers ────────── */
+
+.kanban-plugin {
+  &__lane {
+    background: var(--kanban-lane-bg);
+    border: var(--kanban-lane-border);
+    border-radius: var(--radius-m);
+    box-shadow: var(--kanban-lane-shadow);
+
+    &-wrapper {
+      margin-right: var(--size-4-3);
+    }
+  }
+
+  // Header
+  &__lane-header-wrapper {
+    border-bottom: none;
+    padding: var(--size-4-2) var(--size-4-3) var(--size-2-3);
+  }
+
+  &__item-button-wrapper {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  &__lane-title {
+    &:hover {
+      cursor: text;
+    }
+  }
+
+  &__lane-title-count:is(div) {
+    background: var(--kanban-title-count-bg);
+    border-radius: var(--kanban-title-count-radius);
+    color: var(--kanban-title-count-color);
+    font-size: 0.8em;
+    font-variant: tabular-nums;
+    font-weight: var(--font-semibold);
+    margin: 0 var(--size-2-2);
+    padding: var(--size-2-2) var(--size-4-2);
+  }
+
+  &__lane-grip {
+    margin-right: 0;
+  }
+
+  &__lane-input,
+  &__grow-wrap .kanban-plugin__lane-input,
+  &__lane-title-text {
+    background: transparent;
+    border-radius: calc(var(--radius-m) - 2px);
+    color: var(--kanban-title-text-input-color);
+    padding: var(--size-2-1) var(--size-4-2);
+  }
+
+  &__lane-settings-button.is-enabled {
+    padding-right: 0;
+  }
+
+  &__lane-setting-wrapper > div {
+    padding-top: var(--size-4-1);
+  }
+
+  &__lane-setting-wrapper > div:last-child {
+    border-bottom: var(--kanban-lane-border);
+    margin-bottom: var(--size-4-1);
+  }
+
+  &__lane-items .kanban-plugin__item-wrapper:first-of-type {
+    margin-top: 0;
+  }
+
+  // Card
+  &__item {
+    border: var(--kanban-item-border);
+    overflow: visible;
+  }
+
+  &__item-title-wrapper {
+    background: var(--kanban-item-bg);
+    border-radius: var(--radius-m);
+    box-shadow: var(--kanban-item-shadow);
+    padding: var(--size-2-3) var(--size-4-3);
+  }
+
+  &__item-content-wrapper {
+    border-radius: var(--radius-m);
+  }
+
+  &__item-input:is(.kanban-plugin__item-title-wrapper textarea) {
+    background: var(--kanban-item-bg);
+  }
+}
+
+// Add a Card Button
+&__new-item-button:is(button) {
+  align-items: center;
+  background: var(--kanban-new-item-bg);
+  box-shadow: var(--kanban-new-item-shadow);
+  color: var(--kanban-new-item-color);
+  display: flex;
+  gap: var(--size-2-2);
+  justify-content: flex-start;
+  padding: var(--size-4-2) var(--size-4-3);
+  transition:
+    background,
+    box-shadow var(--anim-duration-fast) var(--anim-motion-smooth);
+
+  &:hover {
+    background: var(--kanban-new-item-bg-hover);
+    box-shadow: var(--kanban-new-item-shadow-hover);
+    color: var(--kanban-new-item-color-hover);
+  }
+
+  &:active {
+    opacity: 0.7;
+    padding: var(--size-4-2) var(--size-4-3);
+  }
+}
+
+// Drag Card
+&__drag-container > .kanban-plugin__item-wrapper .kanban-plugin__item {
+  border: var(--kanban-drag-item-border);
+  box-shadow: var(--kanban-drag-item-shadow);
+}
+
+// New Card Form
+&__item-form {
+  border-top: none;
+  padding-top: 0;
+
+  // same styling as text-input
+  .kanban-plugin__item-input-wrapper {
+    background: var(--text-input-bg-active);
+    border: 1px solid var(--text-input-border-color);
+    box-shadow: var(--text-input-shadow-active);
+    color: var(--text-input-color-focused);
+    padding: var(--size-2-3) var(--size-4-3);
+    transition:
+      background,
+      box-shadow var(--anim-duration-fast) var(--anim-motion-smooth);
+  }
+}
+
+// Checkbox
+&__item-prefix-button-wrapper input[type='checkbox'] {
+  filter: none;
+}
+
+// Card Buttons
+&__item-postfix-button-wrapper {
+  padding: var(--size-2-2) var(--size-2-3);
+}
+
+&__item-postfix-button {
+  padding: 0;
+}
+
+// Card Cancel Button
+&__item-postfix-button[aria-label='Cancel'] {
+  border-radius: var(--close-button-radius);
+
+  &:hover {
+    background: var(--background-modifier-error-hover);
+    color: var(--text-on-accent);
+  }
+
+  &:active {
+    opacity: var(--button-opacity-active);
+  }
+}
