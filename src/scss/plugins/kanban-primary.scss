@@ -1,171 +1,261 @@
 /* ────────── Kanban by mgmeyers ────────── */
 
 .kanban-plugin {
+  /*
+   * Lane Component Styling
+   * Lanes are the vertical columns that contain cards
+   * Each lane typically represents a status or category
+   */
   &__lane {
-    background: var(--kanban-lane-bg);
+    /* Box model */
     border: var(--kanban-lane-border);
     border-radius: var(--radius-m);
+
+    /* Visual styling */
+    background: var(--kanban-lane-bg);
     box-shadow: var(--kanban-lane-shadow);
 
     &-wrapper {
+      /* Spacing between lanes */
       margin-right: var(--size-4-3);
     }
   }
 
-  // Header
+  /*
+   * Lane Header Styling
+   * The top section of each lane containing the title and controls
+   */
   &__lane-header-wrapper {
-    border-bottom: none;
+    /* Box model */
     padding: var(--size-4-2) var(--size-4-3) var(--size-2-3);
+    border-bottom: none; /* Removes default border */
   }
 
   &__item-button-wrapper {
-    border-top: none;
-    padding-top: 0;
+    border-top: none; /* Removes default border */
   }
 
+  /* Lane title text element */
   &__lane-title {
     &:hover {
-      cursor: text;
+      cursor: text; /* Indicates the title is editable */
     }
   }
 
+  /*
+   * Counter badge in lane titles
+   * Shows the number of cards in each lane
+   */
   &__lane-title-count:is(div) {
-    background: var(--kanban-title-count-bg);
-    border-radius: var(--kanban-title-count-radius);
-    color: var(--kanban-title-count-color);
-    font-size: 0.8em;
-    font-variant: tabular-nums;
-    font-weight: var(--font-semibold);
-    margin: 0 var(--size-2-2);
+    /* Box model */
     padding: var(--size-2-2) var(--size-4-2);
+    margin: 0 var(--size-2-2);
+    border-radius: var(--kanban-title-count-radius);
+
+    /* Typography */
+    font-size: 0.8em;
+    font-weight: var(--font-semibold);
+    font-variant: tabular-nums; /* Better aligns numbers */
+
+    /* Visual */
+    color: var(--kanban-title-count-color);
+    background: var(--kanban-title-count-bg);
   }
 
+  /* Drag handle for lane reordering */
   &__lane-grip {
     margin-right: 0;
   }
 
-  &__lane-input,
+  /*
+   * Lane title text/input styling
+   * These selectors target both the static and editable states of lane titles
+   */
   &__grow-wrap .kanban-plugin__lane-input,
-  &__lane-title-text {
-    background: transparent;
-    border-radius: calc(var(--radius-m) - 2px);
-    color: var(--kanban-title-text-input-color);
+  &__lane-title-text,
+  &__lane-input {
+    /* Box model */
     padding: var(--size-2-1) var(--size-4-2);
+    border-radius: calc(var(--radius-m) - 2px);
+
+    /* Visual */
+    color: var(--kanban-title-text-input-color);
+    background: transparent;
   }
 
+  /* Lane settings button when enabled */
   &__lane-settings-button.is-enabled {
     padding-right: 0;
   }
 
+  /* Lane settings panel layout */
   &__lane-setting-wrapper > div {
     padding-top: var(--size-4-1);
   }
 
   &__lane-setting-wrapper > div:last-child {
-    border-bottom: var(--kanban-lane-border);
+    /* Box model */
     margin-bottom: var(--size-4-1);
+    border-bottom: var(--kanban-lane-border);
   }
 
+  /* Remove top margin from first card in a lane */
   &__lane-items .kanban-plugin__item-wrapper:first-of-type {
     margin-top: 0;
   }
 
-  // Card
+  /*
+   * Card Styling
+   * Cards represent individual tasks or items in the kanban board
+   */
   &__item {
+    /* Box model */
     border: var(--kanban-item-border);
-    overflow: visible;
+
+    /* Visual */
+    overflow: visible; /* Allows for shadows and elements to extend beyond the card */
   }
 
+  /* Card title area */
   &__item-title-wrapper {
-    background: var(--kanban-item-bg);
-    border-radius: var(--radius-m);
-    box-shadow: var(--kanban-item-shadow);
+    /* Box model */
     padding: var(--size-2-3) var(--size-4-3);
+    border-radius: var(--radius-m);
+
+    /* Visual */
+    background: var(--kanban-item-bg);
+    box-shadow: var(--kanban-item-shadow);
   }
 
+  /* Card content container */
   &__item-content-wrapper {
     border-radius: var(--radius-m);
   }
 
+  /* Container for card buttons */
+  &__item-button-wrapper {
+    padding-top: 0;
+  }
+
+  /* Input field for editing card titles */
   &__item-input:is(.kanban-plugin__item-title-wrapper textarea) {
     background: var(--kanban-item-bg);
   }
-}
 
-// Add a Card Button
-&__new-item-button:is(button) {
-  align-items: center;
-  background: var(--kanban-new-item-bg);
-  box-shadow: var(--kanban-new-item-shadow);
-  color: var(--kanban-new-item-color);
-  display: flex;
-  gap: var(--size-2-2);
-  justify-content: flex-start;
-  padding: var(--size-4-2) var(--size-4-3);
-  transition:
-    background,
-    box-shadow var(--anim-duration-fast) var(--anim-motion-smooth);
+  /*
+   * "Add a Card" Button Styling
+   * Button that appears at the bottom of each lane
+   */
+  &__new-item-button:is(button) {
+    /* Layout */
+    display: flex;
+    gap: var(--size-2-2);
+    justify-content: flex-start;
+    align-items: center;
 
-  &:hover {
-    background: var(--kanban-new-item-bg-hover);
-    box-shadow: var(--kanban-new-item-shadow-hover);
-    color: var(--kanban-new-item-color-hover);
-  }
-
-  &:active {
-    opacity: 0.7;
+    /* Box model */
     padding: var(--size-4-2) var(--size-4-3);
-  }
-}
 
-// Drag Card
-&__drag-container > .kanban-plugin__item-wrapper .kanban-plugin__item {
-  border: var(--kanban-drag-item-border);
-  box-shadow: var(--kanban-drag-item-shadow);
-}
+    /* Visual */
+    color: var(--kanban-new-item-color);
+    background: var(--kanban-new-item-bg);
+    box-shadow: var(--kanban-new-item-shadow);
 
-// New Card Form
-&__item-form {
-  border-top: none;
-  padding-top: 0;
-
-  // same styling as text-input
-  .kanban-plugin__item-input-wrapper {
-    background: var(--text-input-bg-active);
-    border: 1px solid var(--text-input-border-color);
-    box-shadow: var(--text-input-shadow-active);
-    color: var(--text-input-color-focused);
-    padding: var(--size-2-3) var(--size-4-3);
+    /* Animation */
     transition:
       background,
       box-shadow var(--anim-duration-fast) var(--anim-motion-smooth);
-  }
-}
 
-// Checkbox
-&__item-prefix-button-wrapper input[type='checkbox'] {
-  filter: none;
-}
+    /* Hover state */
+    &:hover {
+      color: var(--kanban-new-item-color-hover);
+      background: var(--kanban-new-item-bg-hover);
+      box-shadow: var(--kanban-new-item-shadow-hover);
+    }
 
-// Card Buttons
-&__item-postfix-button-wrapper {
-  padding: var(--size-2-2) var(--size-2-3);
-}
-
-&__item-postfix-button {
-  padding: 0;
-}
-
-// Card Cancel Button
-&__item-postfix-button[aria-label='Cancel'] {
-  border-radius: var(--close-button-radius);
-
-  &:hover {
-    background: var(--background-modifier-error-hover);
-    color: var(--text-on-accent);
+    /* Active/pressed state */
+    &:active {
+      padding: var(--size-4-2) var(--size-4-3); /* Maintain size to prevent layout shifts */
+      opacity: 0.7; /* Visual feedback for click */
+    }
   }
 
-  &:active {
-    opacity: var(--button-opacity-active);
+  /*
+   * Drag and Drop Styling
+   * Visual appearance of cards when being dragged
+   */
+  &__drag-container > .kanban-plugin__item-wrapper .kanban-plugin__item {
+    /* Box model */
+    border: var(--kanban-drag-item-border);
+
+    /* Visual */
+    box-shadow: var(--kanban-drag-item-shadow); /* Enhanced shadow for visual lift effect */
+  }
+
+  /*
+   * New Card Form Styling
+   * Form that appears when adding a new card
+   */
+  &__item-form {
+    /* Box model */
+    padding-top: 0;
+    border-top: none;
+
+    /* Input field styling, matching text input appearance */
+    .kanban-plugin__item-input-wrapper {
+      /* Box model */
+      padding: var(--size-2-3) var(--size-4-3);
+      border: 1px solid var(--text-input-border-color);
+
+      /* Visual */
+      color: var(--text-input-color-focused);
+      background: var(--text-input-bg-active);
+      box-shadow: var(--text-input-shadow-active);
+
+      /* Animation */
+      transition:
+        background,
+        box-shadow var(--anim-duration-fast) var(--anim-motion-smooth);
+    }
+  }
+
+  /*
+   * Checkbox Styling
+   * For task completion status in cards
+   */
+  &__item-prefix-button-wrapper input[type='checkbox'] {
+    filter: none; /* Removes any default filter effects */
+  }
+
+  /*
+   * Card Button Styling
+   * Action buttons that appear on cards
+   */
+  &__item-postfix-button-wrapper {
+    padding: var(--size-2-2) var(--size-2-3);
+  }
+
+  &__item-postfix-button {
+    padding: 0;
+  }
+
+  /*
+   * Cancel Button Styling
+   * Specific styling for the cancel button in card forms
+   */
+  &__item-postfix-button[aria-label='Cancel'] {
+    /* Box model */
+    border-radius: var(--close-button-radius);
+
+    /* Hover state */
+    &:hover {
+      color: var(--text-on-accent);
+      background: var(--background-modifier-error-hover);
+    }
+
+    /* Active/pressed state */
+    &:active {
+      opacity: var(--button-opacity-active);
+    }
   }
 }
