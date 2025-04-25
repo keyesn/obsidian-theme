@@ -9,6 +9,9 @@
     "sass": "^1.87.0"
   },
   "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.6",
     "grunt": "^1.6.1",
     "grunt-concat-css": "^0.3.2",
     "grunt-contrib-copy": "^1.0.0",
@@ -21,12 +24,32 @@
     "prettier": "^3.5.3",
     "stylelint": "^16.19.0",
     "stylelint-config-standard-scss": "^14.0.0",
-    "stylelint-order": "^7.0.0"
+    "stylelint-order": "^7.0.0",
+    "stylelint-scss": "^6.11.1"
   },
   "scripts": {
     "lint:style": "stylelint \"**/*.{css,scss}\"",
     "lint:js": "eslint .",
     "lint": "npm run lint:style && npm run lint:js",
-    "format": "prettier --write \"**/*.{js,json,scss,css,md}\""
+    "format": "prettier --write \"**/*.{js,json,scss,css,md}\"",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
   }
 }

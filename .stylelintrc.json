@@ -1,11 +1,242 @@
 {
   "extends": ["stylelint-config-standard-scss"],
-  "plugins": ["stylelint-order"],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-scss"
+  ],
   "rules": {
-    "order/properties-alphabetical-order": true,
-    "selector-class-pattern": null,
+    "order/properties-order": [
+      {
+        "groupName": "Positioning",
+        "properties": [
+          "position",
+          "top",
+          "right",
+          "bottom",
+          "left",
+          "z-index"
+        ]
+      },
+      {
+        "groupName": "Display & Box Model",
+        "properties": [
+          "display",
+          "flex",
+          "flex-basis",
+          "flex-direction",
+          "flex-flow",
+          "flex-grow",
+          "flex-shrink",
+          "flex-wrap",
+          "grid",
+          "grid-area",
+          "grid-template",
+          "grid-template-areas",
+          "grid-template-rows",
+          "grid-template-columns",
+          "grid-row",
+          "grid-row-start",
+          "grid-row-end",
+          "grid-column",
+          "grid-column-start",
+          "grid-column-end",
+          "grid-auto-rows",
+          "grid-auto-columns",
+          "grid-auto-flow",
+          "grid-gap",
+          "grid-row-gap",
+          "grid-column-gap",
+          "gap",
+          "row-gap",
+          "column-gap",
+          "align-content",
+          "align-items",
+          "align-self",
+          "justify-content",
+          "justify-items",
+          "justify-self",
+          "order",
+          "float",
+          "clear",
+          "box-sizing",
+          "width",
+          "min-width",
+          "max-width",
+          "height",
+          "min-height",
+          "max-height",
+          "margin",
+          "margin-top",
+          "margin-right",
+          "margin-bottom",
+          "margin-left",
+          "padding",
+          "padding-top",
+          "padding-right",
+          "padding-bottom",
+          "padding-left",
+          "object-fit",
+          "object-position",
+          "overflow",
+          "overflow-x",
+          "overflow-y"
+        ]
+      },
+      {
+        "groupName": "Borders",
+        "properties": [
+          "border",
+          "border-color",
+          "border-style",
+          "border-width",
+          "border-top",
+          "border-top-color",
+          "border-top-width",
+          "border-top-style",
+          "border-right",
+          "border-right-color",
+          "border-right-width",
+          "border-right-style",
+          "border-bottom",
+          "border-bottom-color",
+          "border-bottom-width",
+          "border-bottom-style",
+          "border-left",
+          "border-left-color",
+          "border-left-width",
+          "border-left-style",
+          "border-radius",
+          "border-top-left-radius",
+          "border-top-right-radius",
+          "border-bottom-right-radius",
+          "border-bottom-left-radius",
+          "outline",
+          "outline-color",
+          "outline-offset",
+          "outline-style",
+          "outline-width"
+        ]
+      },
+      {
+        "groupName": "Visual",
+        "properties": [
+          "background",
+          "background-attachment",
+          "background-clip",
+          "background-color",
+          "background-image",
+          "background-origin",
+          "background-position",
+          "background-repeat",
+          "background-size",
+          "color",
+          "box-shadow",
+          "opacity",
+          "visibility"
+        ]
+      },
+      {
+        "groupName": "Typography",
+        "properties": [
+          "font",
+          "font-family",
+          "font-size",
+          "font-style",
+          "font-variant",
+          "font-weight",
+          "letter-spacing",
+          "line-height",
+          "text-align",
+          "text-decoration",
+          "text-indent",
+          "text-overflow",
+          "text-shadow",
+          "text-transform",
+          "white-space",
+          "word-break",
+          "word-spacing"
+        ]
+      },
+      {
+        "groupName": "Transitions & Animations",
+        "properties": [
+          "transition",
+          "transition-delay",
+          "transition-duration",
+          "transition-property",
+          "transition-timing-function",
+          "animation",
+          "animation-delay",
+          "animation-direction",
+          "animation-duration",
+          "animation-fill-mode",
+          "animation-iteration-count",
+          "animation-name",
+          "animation-play-state",
+          "animation-timing-function"
+        ]
+      },
+      {
+        "groupName": "Misc",
+        "properties": [
+          "cursor",
+          "pointer-events",
+          "user-select",
+          "content",
+          "clip",
+          "clip-path",
+          "counter-reset",
+          "counter-increment",
+          "resize",
+          "touch-action",
+          "will-change",
+          "zoom"
+        ]
+      }
+    ],
     "no-duplicate-selectors": null,
     "media-feature-name-no-vendor-prefix": null,
-    "media-feature-name-no-unknown": null
+    "media-feature-name-no-unknown": null,
+
+    // SCSS-specific rules
+    "scss/dollar-variable-pattern": "^[a-z][a-zA-Z0-9]+$",
+    "scss/at-extend-no-missing-placeholder": true,
+    "scss/at-mixin-pattern": "^[a-z][a-zA-Z0-9]+$",
+    "scss/percent-placeholder-pattern": "^[a-z][a-zA-Z0-9]+$",
+    "scss/double-slash-comment-empty-line-before": "always",
+    "scss/no-duplicate-mixins": true,
+
+    // Nesting depth
+    "max-nesting-depth": 4,
+
+    // Use shorthand when possible
+    "shorthand-property-no-redundant-values": true,
+
+    // BEM naming convention for classes (optional, but recommended)
+    "selector-class-pattern": "^[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
+
+    // Prefer modern color functions
+    "color-function-notation": "modern",
+
+    // Encourage using Sass variables for colors
+    "color-no-hex": null,
+
+    // Empty lines between nested blocks for readability
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "except": ["first-nested"],
+        "ignore": ["after-comment"]
+      }
+    ],
+
+    // Encourage using Sass maps for better organization
+    "scss/no-duplicate-dollar-variables": true,
+
+    // Prefer modern @import syntax
+    "scss/at-import-partial-extension": null,
+
+    // Require comments before mixins for documentation
+    "scss/comment-no-empty": true
   }
 }
