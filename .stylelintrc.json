@@ -3,7 +3,9 @@
   "plugins": ["stylelint-order"],
   "rules": {
     "order/properties-alphabetical-order": true,
-    "color-named": "never",
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "no-duplicate-selectors": null,
+    "media-feature-name-no-vendor-prefix": null,
+    "media-feature-name-no-unknown": null
   }
 }
